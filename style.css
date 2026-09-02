@@ -92,15 +92,33 @@ footer{background:var(--forest2);color:#cfcbbd;padding:45px 24px;margin-top:50px
  .section{padding:58px 0}.wrap{padding:0 18px}
  .feature-image{min-height:380px}
 }
-/* make that monster quote smaller */
 section.quote {
-  padding: 30px 0; /* was probably 100px */
+  padding: 40px 20px;
+  text-align: center;
 }
 
-section.quote .wrap blockquote {
-  font-size: 20px;  /* was probably 36px or 48px */
-  line-height: 1.5;
-  max-width: 700px;
+section.quote .wrap {
+  max-width: 800px;
   margin: 0 auto;
-  font-style: italic;
 }
+
+section.quote blockquote {
+  font-size: 19px;      /* knocks it down from huge */
+  line-height: 1.6;
+  font-style: italic;
+  margin: 0 0 15px 0;
+  font-weight: 400;
+}
+
+section.quote cite,
+section.quote .author {
+  display: block;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-top: 10px;
+  font-style: normal;
+}
+
+
