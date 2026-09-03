@@ -168,7 +168,7 @@ section.quote .author {
 
 
 /* --- MOBILE RESPONSIVE TWEAKS --- */
-@media screen and (max-width: 768px) {
+@media screen and (max-width:768px) {
   /* 1. Aligns the main site header grid container cleanly on mobile */
   .site-header {
     padding-left: 20px !important;
