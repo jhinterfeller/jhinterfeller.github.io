@@ -157,6 +157,7 @@ section.quote .author {
 /* Tiny work link by ROAM */
 .footer-tiny {
   text-align: right;
+  
   font-size: 11px;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -165,3 +166,23 @@ section.quote .author {
 }
 .footer-tiny a { text-decoration: none; color: inherit; }
 
+
+/* --- MOBILE RESPONSIVE TWEAKS --- */
+@media screen and (max-width: 768px) {
+  /* 1. Aligns the main site header grid container cleanly on mobile */
+  .site-header {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  /* 2. Controls your specific brand class so it scales down on narrow screens */
+  .brand, .brand h1, h1 {
+    font-size: clamp(1.8rem, 6vw, 3rem) !important;
+    letter-spacing: 0.02em !important;
+  }
+
+  /* 3. Ensures your navigation link block wraps tightly instead of overflowing */
+  nav, .navlinks {
+    gap: 12px !important;
+  }
+}
