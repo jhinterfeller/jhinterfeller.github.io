@@ -188,3 +188,6 @@ section.quote .author {
 }
 .card::after { display: none; }
 .card { filter: none !important; }
+  /* clear-card = natural photo, no dark wash - use for any card you want bright */
+  .card.clear-card img{opacity:1}
+  .card.clear-card::after{background:none;}
