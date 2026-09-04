@@ -186,3 +186,5 @@ section.quote .author {
     gap: 12px !important;
   }
 }
+.card::after { background: none !important; }
+.card { filter: none !important; }
