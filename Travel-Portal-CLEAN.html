@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Travel — IN RUINS</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{--beige:#E8E0C9;--ink:#1a1a1a;--paper:#fdfcf6;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--beige);color:var(--ink);font-family:'Inter',sans-serif;line-height:1.6}
+  a{color:inherit;text-decoration:none}
+  header{max-width:1400px;margin:0 auto;padding:24px 24px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(0,0,0,.1)}
+  header .logo{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:22px;letter-spacing:.08em}
+  header nav a{font-size:11px;letter-spacing:.18em;text-transform:uppercase;margin-left:24px;opacity:.6}
+  header nav a.active{opacity:1;border-bottom:1px solid #000;padding-bottom:2px}
+  .wrap{max-width:1400px;margin:0 auto;padding:48px 24px 80px}
+  .eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;opacity:.6;margin-bottom:8px}
+  .hero h1{font-family:'Cormorant Garamond',serif;font-size:72px;line-height:.9;font-weight:600;margin-bottom:16px}
+  .hero p{max-width:560px;font-size:17px;opacity:.8;margin-bottom:32px}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px}
+  @media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)} .hero h1{font-size:52px}}
+  @media(max-width:600px){.grid{grid-template-columns:1fr}}
+  .card{position:relative;aspect-ratio:1.2/1;overflow:hidden;background:#111;cursor:pointer}
+  .card img{width:100%;height:100%;object-fit:cover;opacity:.85;transition:transform .6s ease, opacity .4s}
+  .card:hover img{transform:scale(1.05);opacity:1}
+  .card .content{position:absolute;inset:0;padding:24px;display:flex;flex-direction:column;justify-content:flex-end;color:#fff;z-index:2}
+  .card::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.1) 0%, rgba(0,0,0,.6) 100%);z-index:1}
+  .card .label{font-size:10px;letter-spacing:.18em;text-transform:uppercase;opacity:.9;margin-bottom:6px;position:relative;z-index:2}
+  .card h2{font-family:'Cormorant Garamond',serif;font-size:36px;line-height:1;font-weight:500;margin-bottom:10px}
+  .card p{font-size:13px;line-height:1.4;opacity:.85;max-width:90%}
+  .card .cta{margin-top:12px;font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:600}
+  .map-section{margin-top:72px;border-top:1px solid rgba(0,0,0,.12);padding-top:32px;display:grid;grid-template-columns:1.2fr .8fr;gap:32px}
+  @media(max-width:900px){.map-section{grid-template-columns:1fr}}
+  .map-box{background:#fdfcf6;border:1px solid rgba(0,0,0,.1);aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;font-size:12px;letter-spacing:.1em;text-transform:uppercase;opacity:.6}
+  footer{max-width:1400px;margin:0 auto;padding:24px;border-top:1px solid rgba(0,0,0,.1);font-size:11px;letter-spacing:.12em;text-transform:uppercase;opacity:.5}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">IN RUINS</div>
+  <nav>
+    <a href="/travel/" class="active">Travel</a>
+    <a href="/history/">History</a>
+    <a href="/photographs/">Photographs</a>
+    <a href="/field-notes/">Field Notes</a>
+    <a href="/back-porch/">Back Porch</a>
+    <a href="/the-ride/">The Ride</a>
+  </nav>
+</header>
+
+<div class="wrap">
+  <div class="hero">
+    <div class="eyebrow">01 / Travel</div>
+    <h1>Travel</h1>
+    <p>Step Away From The Comfort Zone. Not resorts — ruins, bus stations, border crossings. From Takeo to Sukhothai to Teotihuacan. Piece by piece.</p>
+  </div>
+
+  <div class="grid">
+    <a href="/travel/khmer/" class="card">
+      <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=800" alt="Khmer">
+      <div class="content">
+        <div class="label">Empire at its height • 802–1431</div>
+        <h2>Khmer</h2>
+        <p>From Takeo to Phimai. Early brick towers to jungle lintels. Ta Muen Thom — escorted by both armies, fighting started right after.</p>
+        <div class="cta">Enter →</div>
+      </div>
+    </a>
+    <a href="/travel/thai/" class="card">
+      <img src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?q=80&w=800" alt="Thai">
+      <div class="content">
+        <div class="label">Sukhothai • Ayutthaya • Isan</div>
+        <h2>Thai</h2>
+        <p>Phanom Rung, Muang Tam, Phimai. Later kingdoms built on Khmer roads.</p>
+        <div class="cta">Enter →</div>
+      </div>
+    </a>
+    <a href="/travel/maya/" class="card">
+      <img src="https://images.unsplash.com/photo-1518638150340-f706e86654b8?q=80&w=800" alt="Maya">
+      <div class="content">
+        <div class="label">Puuc • Peten • Chiapas</div>
+        <h2>Maya</h2>
+        <p>Cenotes, motmots, and cities swallowed by jungle. The blurry one stays blurry.</p>
+        <div class="cta">Enter →</div>
+      </div>
+    </a>
+    <a href="/travel/central-mexico/" class="card">
+      <img src="https://images.unsplash.com/photo-1518638150340-f706e86654b8?q=80&w=800" alt="Central Mexico">
+      <div class="content">
+        <div class="label">Valley of Mexico</div>
+        <h2>Central Mexico</h2>
+        <p>Teotihuacan is not Aztec. Mexica, Toltec, and everything layered underneath.</p>
+        <div class="cta">Enter →</div>
+      </div>
+    </a>
+    <a href="/travel/china/" class="card">
+      <img src="https://images.unsplash.com/photo-1508804185872-d7badad00f7d?q=80&w=800" alt="China">
+      <div class="content">
+        <div class="label">Zhuizishan • Shenyang • Ming Tombs</div>
+        <h2>China</h2>
+        <p>Northern ruins, frontier tombs, and a wall that isn't one wall.</p>
+        <div class="cta">Enter →</div>
+      </div>
+    </a>
+    <a href="/travel/camino/" class="card">
+      <img src="https://images.unsplash.com/photo-1482398650355-d4c6462afa0e?q=80&w=800" alt="Camino">
+      <div class="content">
+        <div class="label">Boots • Arrows • Blisters</div>
+        <h2>Camino</h2>
+        <p>A long walk across Spain. What you find when you have nothing else to do.</p>
+        <div class="cta">Enter →</div>
+      </div>
+    </a>
+    <a href="/travel/cusco/" class="card" style="background:#1a1a1a">
+      <img src="https://images.unsplash.com/photo-1587593810167-a84920ea0781?q=80&w=800" style="opacity:.4" alt="Cusco Next">
+      <div class="content">
+        <div class="label">Next</div>
+        <h2>Cusco</h2>
+        <p>50 year old men wanted. Coming when the funds allow.</p>
+        <div class="cta">Follow →</div>
+      </div>
+    </a>
+  </div>
+
+  <div class="map-section">
+    <div>
+      <div class="eyebrow">The Map</div>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:32px;margin-bottom:12px">Jayavarman VII at its Height, c.1181–1220</h2>
+      <p style="max-width:480px;font-size:14px;opacity:.7">This is where the height map goes. From Takeo in the south to Phimai in the north. People have no idea how big it was. Replace this box with your map image — keep it full width, beige border.</p>
+      <p style="margin-top:16px;font-size:11px;letter-spacing:.12em;text-transform:uppercase">→ REPLACE: /images/maps/jayavarman-vii-height.jpg</p>
+    </div>
+    <div class="map-box">MAP PLACEHOLDER<br>1200x750px</div>
+  </div>
+</div>
+
+<footer>© J Hinterfeller — IN RUINS</footer>
+</body>
+</html>
