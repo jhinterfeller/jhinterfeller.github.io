@@ -186,5 +186,5 @@ section.quote .author {
     gap: 12px !important;
   }
 }
-.card::after { background: none !important; }
+.card::after { display: none; }
 .card { filter: none !important; }
