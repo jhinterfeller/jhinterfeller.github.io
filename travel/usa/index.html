@@ -4,52 +4,189 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>USA — IN RUINS</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 <style>
-  :root{--beige:#E8E0C9;--ink:#1a1a1a;--paper:#fdfcf6;--line:#1a1a1a;}
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{background:var(--beige);color:var(--ink);font-family:'Inter',sans-serif;}
-  a{color:inherit;text-decoration:none}
-  header{max-width:1300px;margin:0 auto;padding:18px 20px;display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid var(--ink)}
-  header .logo{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:22px;letter-spacing:.08em}
-  header nav{font-size:10px;letter-spacing:.18em;text-transform:uppercase;opacity:.6}
-  .wrap{max-width:1300px;margin:0 auto;padding:18px 14px 60px}
-  .mast{border-bottom:3px double var(--ink);padding:10px 0 12px;margin-bottom:14px;text-align:center}
-  .mast h1{font-family:'Cormorant Garamond',serif;font-size:64px;line-height:.9;letter-spacing:.02em}
-  .mast .sub{display:flex;justify-content:space-between;font-size:10px;letter-spacing:.18em;text-transform:uppercase;margin-top:8px;border-top:1px solid var(--ink);padding-top:6px}
-  .paper{display:grid;grid-template-columns:1.15fr .9fr .9fr;gap:14px;align-items:start}
-  @media(max-width:900px){.paper{grid-template-columns:1fr 1fr} .mast h1{font-size:46px}}
-  @media(max-width:600px){.paper{grid-template-columns:1fr}}
-  .story{background:var(--paper);border:1.5px solid var(--ink);padding:14px 14px 12px;box-shadow:2px 2px 0 rgba(0,0,0,.08)}
-  .story h2{font-family:'Cormorant Garamond',serif;font-size:28px;line-height:.95;margin:6px 0 8px}
-  .story h3{font-family:'Cormorant Garamond',serif;font-size:18px;line-height:1;margin:8px 0 6px;border-top:1px solid var(--ink);padding-top:8px}
-  .kicker{font-size:9px;letter-spacing:.2em;text-transform:uppercase;font-weight:600}
-  .story p{font-size:13px;line-height:1.45;margin-bottom:8px}
-  .story img{width:100%;display:block;border:1px solid var(--ink);margin:8px 0 8px;filter:sepia(.15) contrast(1.05)}
-  .story a.imglink{display:block}
-  .tiny{font-size:9px;letter-spacing:.14em;text-transform:uppercase;opacity:.6;margin-top:6px}
-  .rot1{transform:rotate(-0.6deg)} .rot2{transform:rotate(0.5deg)} .rot3{transform:rotate(-0.35deg)} .rot4{transform:rotate(0.4deg)} .rot5{transform:rotate(-0.2deg)}
-  footer{max-width:1300px;margin:0 auto;padding:14px 20px;border-top:2px solid var(--ink);font-size:10px;letter-spacing:.14em;text-transform:uppercase;opacity:.6}
+  /* ONLY SYSTEM FONTS - no external links */
+  /* Georgia = your newspaper headline font */
+  /* System sans = your small text */
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #E8E0C9;
+    color: #1a1a1a;
+    font-family: Georgia, "Times New Roman", Times, serif;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  header {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 18px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #1a1a1a;
+  }
+
+  header .logo {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: .08em;
+  }
+
+  header nav {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    opacity: .6;
+  }
+
+  .wrap {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 18px 14px 60px;
+  }
+
+  .mast {
+    border-bottom: 3px double #1a1a1a;
+    padding: 10px 0 12px;
+    margin-bottom: 14px;
+    text-align: center;
+  }
+
+  .mast h1 {
+    font-size: 64px;
+    line-height: .9;
+    letter-spacing: .02em;
+  }
+
+  .mast .sub {
+    display: flex;
+    justify-content: space-between;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    margin-top: 8px;
+    border-top: 1px solid #1a1a1a;
+    padding-top: 6px;
+  }
+
+  .paper {
+    display: grid;
+    grid-template-columns: 1.15fr .9fr .9fr;
+    gap: 14px;
+    align-items: start;
+  }
+
+  .story {
+    background: #fdfcf6;
+    border: 1.5px solid #1a1a1a;
+    padding: 14px 14px 12px;
+  }
+
+  .story h2 {
+    font-size: 28px;
+    line-height: .95;
+    margin: 6px 0 8px;
+  }
+
+  .story h3 {
+    font-size: 18px;
+    line-height: 1;
+    margin: 8px 0 6px;
+    border-top: 1px solid #1a1a1a;
+    padding-top: 8px;
+  }
+
+  .kicker {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 9px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .story p {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    line-height: 1.45;
+    margin-bottom: 8px;
+  }
+
+  .story img {
+    width: 100%;
+    display: block;
+    border: 1px solid #1a1a1a;
+    margin: 8px 0 8px;
+  }
+
+  .tiny {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 9px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    opacity: .6;
+    margin-top: 6px;
+  }
+
+  /* little tilt - you can delete these if you don't like it */
+  .rot1 { transform: rotate(-0.6deg); }
+  .rot2 { transform: rotate(0.5deg); }
+  .rot3 { transform: rotate(-0.35deg); }
+  .rot4 { transform: rotate(0.4deg); }
+  .rot5 { transform: rotate(-0.2deg); }
+
+  footer {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 14px 20px;
+    border-top: 2px solid #1a1a1a;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    opacity: .6;
+  }
+
+  @media (max-width: 900px) {
+    .paper { grid-template-columns: 1fr 1fr; }
+    .mast h1 { font-size: 46px; }
+  }
+
+  @media (max-width: 600px) {
+    .paper { grid-template-columns: 1fr; }
+  }
 </style>
 </head>
 <body>
+
 <header>
   <a href="index.html" class="logo">IN RUINS</a>
   <nav><a href="index.html">Travel</a> / USA</nav>
 </header>
 
 <div class="wrap">
+
   <div class="mast">
     <h1>USA</h1>
-    <div class="sub"><span>Home of the Brave — Land of the Free</span><span>From Sea to Shining Sea</span><span>Vol. I / No. 01</span></div>
+    <div class="sub">
+      <span>Home of the Brave — Land of the Free</span>
+      <span>From Sea to Shining Sea</span>
+      <span>Vol. I / No. 01</span>
+    </div>
   </div>
 
   <div class="paper">
+
     <!-- LEFT MAIN -->
     <div class="story rot1">
       <div class="kicker">Old Faithful • Yellowstone</div>
       <h2>Become One With Nature In A National Park</h2>
-      <a class="imglink" href="faithful.jpg"><img src="Mtrainier.jpg" alt="Mt Rainier"></a>
+      <a href="faithful.jpg"><img src="Mtrainier.jpg" alt="Mt Rainier"></a>
       <p>Early morning light on the mountain. The road in, the snow still holding on the trail in June. This is where the idea started.</p>
       <p>Long walks, no signal, just the sound of the trees. That is the point.</p>
       <div class="tiny">Fig. 01 — Mt. Rainier, WA — Photo: J Hinterfeller</div>
@@ -58,12 +195,12 @@
     </div>
 
     <!-- MIDDLE STACK -->
-    <div style="display:grid;gap:14px">
+    <div style="display:grid; gap:14px;">
       <div class="story rot2">
         <div class="kicker">Dispatch</div>
         <h2 style="font-size:22px;">Catch A Game In The Cities</h2>
         <p>Minor league bleachers, $6 ticket. Same game, better stories. You learn a town by who sits around you.</p>
-        <a class="imglink" href="Mtrainier.jpg"><img src="Mtrainier.jpg" alt="USA small town"></a>
+        <a href="Mtrainier.jpg"><img src="Mtrainier.jpg" alt="USA small town"></a>
         <div class="tiny">Ballpark, somewhere between</div>
       </div>
       <div class="story rot3">
@@ -75,13 +212,13 @@
     </div>
 
     <!-- RIGHT STACK -->
-    <div style="display:grid;gap:14px">
+    <div style="display:grid; gap:14px;">
       <div class="story rot4">
         <div class="kicker">From Sea To Shining Sea</div>
         <h2 style="font-size:22px;">What Is Out There</h2>
         <p>A list for now, to be marked up later:</p>
         <p>— Mt. Rainier<br>— Olympic Peninsula<br>— Yellowstone cut-off<br>— Blue Ridge Parkway<br>— Everglades at dusk</p>
-        <a class="imglink" href="Mtrainier.jpg"><img src="Mtrainier.jpg" alt="USA map"></a>
+        <a href="Mtrainier.jpg"><img src="Mtrainier.jpg" alt="USA map"></a>
       </div>
       <div class="story rot5">
         <div class="kicker">Next Page</div>
@@ -92,8 +229,10 @@
     </div>
 
   </div>
+
 </div>
 
 <footer>IN RUINS — USA</footer>
+
 </body>
 </html>
