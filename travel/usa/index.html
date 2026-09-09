@@ -5,249 +5,133 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>USA — IN RUINS</title>
 <style>
-  /* ONLY SYSTEM FONTS - no external links */
-  /* Georgia = your newspaper headline font */
-  /* System sans = your small text */
-
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-
-  body {
-    background: #E8E0C9;
-    color: #1a1a1a;
-    font-family: Georgia, "Times New Roman", Times, serif;
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#E8E0C9;color:#1a1a1a;font-family:Georgia,"Times New Roman",Times,serif}
+  a{color:inherit;text-decoration:none}
+  
+  /* FUNCTIONAL TOP RAIL - matches Travel tab screenshot */
+  header{
+    max-width:1300px;
+    margin:0 auto;
+    padding:24px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid rgba(0,0,0,.15);
+  }
+  header .logo{
+    font-family:Georgia,"Times New Roman",Times,serif;
+    font-weight:700;
+    font-size:22px;
+    letter-spacing:.08em;
+    color:#1a1a1a;
+  }
+  header nav{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  header nav a{
+    font-size:11px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    margin-left:24px;
+    opacity:.6;
+  }
+  header nav a:hover{opacity:1}
+  header nav span.active{
+    font-size:11px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    margin-left:24px;
+    border-bottom:1px solid #000;
+    padding-bottom:2px;
   }
 
-  a { color: inherit; text-decoration: none; }
-
-  header {
-    max-width: 1300px;
-    margin: 0 auto;
-    padding: 18px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid #1a1a1a;
-  }
-
-  header .logo {
-    font-family: Georgia, "Times New Roman", Times, serif;
-    font-weight: 700;
-    font-size: 22px;
-    letter-spacing: .08em;
-  }
-
-  header nav {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 10px;
-    letter-spacing: .18em;
-    text-transform: uppercase;
-    opacity: .6;
-  }
-
-  .wrap {
-    max-width: 1300px;
-    margin: 0 auto;
-    padding: 18px 14px 60px;
-  }
-
-  .mast {
-    border-bottom: 3px double #1a1a1a;
-    padding: 10px 0 12px;
-    margin-bottom: 14px;
-    text-align: center;
-  }
-
-  .mast h1 {
-    font-size: 64px;
-    line-height: .9;
-    letter-spacing: .02em;
-  }
-
-  .mast .sub {
-    display: flex;
-    justify-content: space-between;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 10px;
-    letter-spacing: .18em;
-    text-transform: uppercase;
-    margin-top: 8px;
-    border-top: 1px solid #1a1a1a;
-    padding-top: 6px;
-  }
-
-  .paper {
-    display: grid;
-    grid-template-columns: 1.15fr .9fr .9fr;
-    gap: 14px;
-    align-items: start;
-  }
-
-  .story {
-    background: #fdfcf6;
-    border: 1.5px solid #1a1a1a;
-    padding: 14px 14px 12px;
-  }
-
-  .story h2 {
-    font-size: 28px;
-    line-height: .95;
-    margin: 6px 0 8px;
-  }
-
-  .story h3 {
-    font-size: 18px;
-    line-height: 1;
-    margin: 8px 0 6px;
-    border-top: 1px solid #1a1a1a;
-    padding-top: 8px;
-  }
-
-  .kicker {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 9px;
-    letter-spacing: .2em;
-    text-transform: uppercase;
-    font-weight: 600;
-  }
-
-  .story p {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 13px;
-    line-height: 1.45;
-    margin-bottom: 8px;
-  }
-
-  .story img {
-    width: 100%;
-    display: block;
-    border: 1px solid #1a1a1a;
-    margin: 8px 0 8px;
-  }
-
-  .tiny {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 9px;
-    letter-spacing: .14em;
-    text-transform: uppercase;
-    opacity: .6;
-    margin-top: 6px;
-  }
-
-
-  footer {
-    max-width: 1300px;
-    margin: 0 auto;
-    padding: 14px 20px;
-    border-top: 2px solid #1a1a1a;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 10px;
-    letter-spacing: .14em;
-    text-transform: uppercase;
-    opacity: .6;
-  }
-
-  @media (max-width: 900px) {
-    .paper { grid-template-columns: 1fr 1fr; }
-    .mast h1 { font-size: 46px; }
-  }
-
-  @media (max-width: 600px) {
-    .paper { grid-template-columns: 1fr; }
-  }
+  .wrap{max-width:1300px;margin:0 auto;padding:18px 14px 60px}
+  .mast{border-bottom:3px double #1a1a1a;padding:10px 0 12px;margin-bottom:14px;text-align:center}
+  .mast h1{font-size:64px;line-height:.9;letter-spacing:.02em}
+  .mast .sub{display:flex;justify-content:space-between;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:10px;letter-spacing:.18em;text-transform:uppercase;margin-top:8px;border-top:1px solid #1a1a1a;padding-top:6px}
+  .paper{display:grid;grid-template-columns:1.15fr .9fr .9fr;gap:14px;align-items:start}
+  .story{background:#fdfcf6;border:1.5px solid #1a1a1a;padding:14px 14px 12px}
+  .story h2{font-size:28px;line-height:.95;margin:6px 0 8px}
+  .story h3{font-size:18px;line-height:1;margin:8px 0 6px;border-top:1px solid #1a1a1a;padding-top:8px}
+  .kicker{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:9px;letter-spacing:.2em;text-transform:uppercase;font-weight:600}
+  .story p{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:13px;line-height:1.45;margin-bottom:8px}
+  .story img{width:100%;display:block;border:1px solid #1a1a1a;margin:8px 0 8px}
+  .tiny{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:9px;letter-spacing:.14em;text-transform:uppercase;opacity:.6;margin-top:6px}
+  footer{max-width:1300px;margin:0 auto;padding:14px 20px;border-top:2px solid #1a1a1a;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:10px;letter-spacing:.14em;text-transform:uppercase;opacity:.6}
+  @media(max-width:900px){.paper{grid-template-columns:1fr 1fr}.mast h1{font-size:46px}header{flex-direction:column;gap:12px}}
+  @media(max-width:600px){.paper{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 
-<main>
+<header>
+  <a href="../../index.html" class="logo">IN RUINS</a>
+  <nav>
+    <a href="../../travel.html">Travel</a>
+    <a href="../../history.html">History</a>
+    <a href="../../photographs.html">Photos</a>
+    <a href="../../field-notes.html">Field Notes</a>
+    <a href="../../keilloresk.html">Back Porch</a>
+    <a href="../../work.html">The Ride</a>
+  </nav>
+</header>
 
 <div class="wrap">
-
   <div class="mast">
     <h1>USA</h1>
-    <div class="sub">
-      <span>Home of the Brave — Land of the Free</span>
-      <span>From Sea to Shining Sea</span>
-      <span>Vol. I / No. 01</span>
-    </div>
+    <div class="sub"><span>Home of the Brave — Land of the Free</span><span>From Sea to Shining Sea</span><span>Vol. I / No. 01</span></div>
   </div>
-
   <div class="paper">
-
-    <!-- LEFT MAIN -->
-    <div class="story rot1">
+    <div class="story">
       <div class="kicker">Old Faithful • Yellowstone</div>
       <h2>Become One With Nature In A National Park</h2>
-      <a href="travel/usa/index.html"><img src="faithful.jpg" alt="Old Faithful"></a>
+      <a href="faithful.jpg"><img src="faithful.jpg" alt="Old Faithful"></a>
       <p>Peaceful, until it's not.</p>
       <p>Yellowstone-The world was Granted the first national park</p>
       <div class="tiny">Fig. 01 — Old faithful, Yellowstone — Photo: J Hinterfeller</div>
       <h3>I need to put the Title here when it is written</h3>
       <p>cut and paste the article here</p>
     </div>
-
-          <div class="story rot2">
+    <div style="display:grid;gap:14px;">
+      <div class="story">
         <div class="kicker">Dispatch</div>
         <h2 style="font-size:22px;">Catch A Game In The Cities</h2>
         <p>paragraph</p>
         <a href="Mtrainier.jpg"><img src="Mtrainier.jpg" alt="USA small town"></a>
         <div class="tiny">Ballpark</div>
       </div>
-
-    <!-- MIDDLE STACK -->
-    <div style="display:grid; gap:14px;">
-      <div class="story rot2">
+      <div class="story">
         <div class="kicker">Dispatch</div>
         <h2 style="font-size:22px;">Catch A Game In The Cities</h2>
         <p>enter text</p>
-        <a href="travel/usa/index.html"><img src="Mtrainier.jpg" alt="USA small town"></a>
+        <a href="Mtrainier.jpg"><img src="Mtrainier.jpg" alt="USA small town"></a>
         <div class="tiny">Ballpark</div>
       </div>
-      <div class="story rot3">
+      <div class="story">
         <div class="kicker">Field Notes</div>
         <h3>Roadside</h3>
         <p>Gas station coffee, paper map on the dash. No app can replace a bad fold.</p>
         <p>Enter the parks early. Leave the parks late.</p>
       </div>
     </div>
-
-      <div class="story rot2">
-        <div class="kicker">Dispatch</div>
-        <h2 style="font-size:22px;">Catch A Game In The Cities</h2>
-        <p>Minor league bleachers, $6 ticket. Same game, better stories. You learn a town by who sits around you.</p>
-        <a href="Mtrainier.jpg"><img src="Mtrainier.jpg" alt="USA small town"></a>
-        <div class="tiny">Ballpark, somewhere between</div>
-      </div>
-    
-    <!-- RIGHT STACK -->
-    <div style="display:grid; gap:14px;">
-      <div class="story rot4">
+    <div style="display:grid;gap:14px;">
+      <div class="story">
         <div class="kicker">From Sea To Shining Sea</div>
         <h2 style="font-size:22px;">What Is Out There</h2>
         <p>A list for now, to be marked up later:</p>
         <p>— Mt. Rainier<br>— Olympic Peninsula<br>— Yellowstone cut-off<br>— Blue Ridge Parkway<br>— Everglades at dusk</p>
-        <a href="travel/usa/index.html"><img src="Mtrainier.jpg" alt="USA map"></a>
+        <a href="Mtrainier.jpg"><img src="Mtrainier.jpg" alt="USA map"></a>
       </div>
-      <div class="story rot2">
-        <div class="kicker">Dispatch</div>
-        <h2 style="font-size:22px;">Catch A Game In The Cities</h2>
-        <p>Minor league bleachers, $6 ticket. Same game, better stories. You learn a town by who sits around you.</p>
-        <a href="Mtrainier.jpg"><img src="Mtrainier.jpg" alt="USA small town"></a>
-        <div class="tiny">Ballpark, somewhere between</div>
-      </div>
-      
-      <div class="story rot5">
+      <div class="story">
         <div class="kicker">Next Page</div>
         <h3>To Be Continued</h3>
         <p>More miles. More film. This page will grow when the road does.</p>
         <div class="tiny">IN RUINS / USA</div>
       </div>
     </div>
-
   </div>
-
 </div>
-
 <footer>IN RUINS — USA</footer>
-
 </body>
 </html>
