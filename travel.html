@@ -5,175 +5,35 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Travel — IN RUINS</title>
 <style>
-  /* SYSTEM FONTS ONLY - no Google, no external */
-  /* Serif for headlines = Georgia (everyone has it) */
-  /* Sans for body = system sans stack (everyone has it) */
-
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
-  body {
-    background: #E8E0C9;
-    color: #1a1a1a;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.6;
-  }
-
+  body { background: #E8E0C9; color: #1a1a1a; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; }
   a { color: inherit; text-decoration: none; }
+  header { max-width: 1400px; margin: 0 auto; padding: 24px 24px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(0,0,0,.1); }
+  header .logo { font-family: Georgia, "Times New Roman", Times, serif; font-weight: 600; font-size: 22px; letter-spacing: .08em; }
+  header nav a { font-size: 11px; letter-spacing: .18em; text-transform: uppercase; margin-left: 24px; opacity: .6; }
+  header nav span.active { font-size: 11px; letter-spacing: .18em; text-transform: uppercase; margin-left: 24px; opacity: 1; border-bottom: 1px solid #000; padding-bottom: 2px; }
+  .wrap { max-width: 1400px; margin: 0 auto; padding: 48px 24px 80px; }
+  .eyebrow { font-size: 11px; letter-spacing: .2em; text-transform: uppercase; margin-bottom: 8px; }
+  .hero h1 { font-family: Georgia, "Times New Roman", Times, serif; font-size: 72px; line-height: 1; font-weight: 600; margin-bottom: 16px; }
+  .hero p { max-width: 560px; font-size: 17px; margin-bottom: 32px; }
+  
+  /* FIXED: 3 normal cards + 0.5 skinny right margin */
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr) 0.5fr; gap: 14px; margin-top: 32px; }
+  @media (max-width: 900px) { .grid { grid-template-columns: repeat(2, 1fr); } .hero h1 { font-size: 52px; } }
+  @media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }
 
-  header {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 24px 24px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid rgba(0,0,0,.1);
-  }
-
-  header .logo {
-    font-family: Georgia, "Times New Roman", Times, serif;
-    font-weight: 600;
-    font-size: 22px;
-    letter-spacing: .08em;
-  }
-
-  header nav a {
-    font-size: 11px;
-    letter-spacing: .18em;
-    text-transform: uppercase;
-    margin-left: 24px;
-    opacity: .6;
-  }
-
-  header nav span.active {
-    font-size: 11px;
-    letter-spacing: .18em;
-    text-transform: uppercase;
-    margin-left: 24px;
-    opacity: 1;
-    border-bottom: 1px solid #000;
-    padding-bottom: 2px;
-  }
-
-  .wrap {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 48px 24px 80px;
-  }
-
-  .eyebrow {
-    font-size: 11px;
-    letter-spacing: .2em;
-    text-transform: uppercase;
-    margin-bottom: 8px;
-  }
-
-  .hero h1 {
-    font-family: Georgia, "Times New Roman", Times, serif;
-    font-size: 72px;
-    line-height: 1;
-    font-weight: 600;
-    margin-bottom: 16px;
-  }
-
-  .hero p {
-    max-width: 560px;
-    font-size: 17px;
-    margin-bottom: 32px;
-  }
-
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-    margin-top: 32px;
-  }
-
-  @media (max-width: 900px) {
-    .grid { grid-template-columns: repeat(2, 1fr); }
-    .hero h1 { font-size: 52px; }
-  }
-
-  @media (max-width: 600px) {
-    .grid { grid-template-columns: 1fr; }
-  }
-
-  .card {
-    position: relative;
-    aspect-ratio: 1.2/1;
-    overflow: hidden;
-    background: #111;
-    cursor: pointer;
-  }
-
-  .card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-
-  .card .content {
-    position: absolute;
-    inset: 0;
-    padding: 24px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    color: #fff;
-    z-index: 2;
-  }
-
-  .card .label {
-    font-size: 10px;
-    letter-spacing: .18em;
-    text-transform: uppercase;
-    margin-bottom: 6px;
-  }
-
-  .card h2 {
-    font-family: Georgia, "Times New Roman", Times, serif;
-    font-size: 36px;
-    line-height: 1;
-    font-weight: 500;
-    margin-bottom: 10px;
-  }
-
-  .card p {
-    font-size: 13px;
-    line-height: 1.4;
-  }
-
-  .card .cta {
-    margin-top: 12px;
-    font-size: 10px;
-    letter-spacing: .18em;
-    text-transform: uppercase;
-    font-weight: 600;
-  }
-
-  /* usa and mexico keep their special centering - you can edit these inline */
-  .card.usa-card::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(0,0,0,.05) 0%, rgba(0,0,0,.15) 80%);
-    z-index: 1;
-  }
-
-  footer {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 24px;
-    border-top: 1px solid rgba(0,0,0,.1);
-    font-size: 11px;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-  }
+  .card { position: relative; aspect-ratio: 1.2/1; overflow: hidden; background: #111; cursor: pointer; }
+  .card img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .card .content { position: absolute; inset: 0; padding: 24px; display: flex; flex-direction: column; justify-content: flex-end; color: #fff; z-index: 2; }
+  .card .label { font-size: 10px; letter-spacing: .18em; text-transform: uppercase; margin-bottom: 6px; }
+  .card h2 { font-family: Georgia, "Times New Roman", Times, serif; font-size: 36px; line-height: 1; font-weight: 500; margin-bottom: 10px; }
+  .card p { font-size: 13px; line-height: 1.4; }
+  .card .cta { margin-top: 12px; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; font-weight: 600; }
+  .card.usa-card::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.05) 0%, rgba(0,0,0,.15) 80%); z-index: 1; }
+  footer { max-width: 1400px; margin: 0 auto; padding: 24px; border-top: 1px solid rgba(0,0,0,.1); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
 </style>
 </head>
 <body>
-
 <header>
   <a href="index.html" class="logo">IN RUINS</a>
   <nav>
@@ -185,9 +45,7 @@
     <a href="work.html">The Ride</a>
   </nav>
 </header>
-
 <div class="wrap">
-
   <div class="hero">
     <div class="eyebrow">01 / Travel</div>
     <h1>Travel</h1>
@@ -195,7 +53,6 @@
   </div>
 
   <div class="grid">
-
     <!-- USA -->
     <a href="/travel/usa/" class="card usa-card">
       <img src="Mtrainier.jpg" alt="Mt Rainier - USA">
@@ -208,7 +65,6 @@
         </div>
       </div>
     </a>
-
     <!-- MEXICO -->
     <a href="/travel/mexico/" class="card">
       <img src="023_result.jpg" alt="Puerto Vallarta - Mexico">
@@ -223,7 +79,6 @@
         </div>
       </div>
     </a>
-
     <!-- THAILAND -->
     <a href="/travel/thailand/" class="card">
       <img src="Isaan.jpg" alt="Thailand">
@@ -234,7 +89,6 @@
         <div class="cta">Enter →</div>
       </div>
     </a>
-
     <!-- CAMINO -->
     <a href="/travel/camino/" class="card">
       <img src="Caminopspt_result.jpg" alt="Camino">
@@ -245,7 +99,6 @@
         <div class="cta">Enter →</div>
       </div>
     </a>
-
     <!-- CHINA -->
     <a href="/travel/china/" class="card">
       <img src="ZZSHcity.jpg" alt="China">
@@ -256,7 +109,6 @@
         <div class="cta">Enter →</div>
       </div>
     </a>
-
     <!-- CAMBODIA -->
     <a href="/travel/cambodia/" class="card">
       <img src="Enterangkor.jpg" alt="Cambodia">
@@ -267,7 +119,6 @@
         <div class="cta">Enter →</div>
       </div>
     </a>
-
     <!-- MODES -->
     <a href="/travel/modes/" class="card">
       <img src="thecurve.jpg" alt="sailing">
@@ -278,7 +129,6 @@
         <div class="cta">Enter →</div>
       </div>
     </a>
-
     <!-- PERU -->
     <a href="/travel/cusco/" class="card" style="background:#1a1a1a">
       <img src="Mayan.jpg" style="opacity:.4" alt="Cusco Next">
@@ -289,29 +139,29 @@
         <div class="cta">Follow →</div>
       </div>
     </a>
-     
-<div style="border:1.5px solid #1a1a1a; background:#fdfcf6; display:flex; flex-direction:column; overflow:hidden;">
-  <div style="background:#FFD84D; padding:10px 12px; font-family:Georgia, Times, serif; font-weight:700; font-size:16px; border-bottom:1.5px solid #1a1a1a;">Did you know...?</div>
-  <img src="banana_result.jpg" alt="Green bananas" style="width:100%; height:180px; object-fit:cover; display:block; border-bottom:1.5px solid #1a1a1a;">
-  <div style="padding:10px 12px; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-size:13px; line-height:1.4;">
-    There are more than 1000 varieties of bananas in the world. We can eat about half of them. The bananas we find in the grocery store in the USA are called Cavendish, and 30 to 50 different types can be found in a Thai market.
-  </div>
-</div>
-  </a>
-  <!-- MAP SECTION -->
+
+    <!-- TALL SKINNY RIGHT MARGIN DID YOU KNOW -->
+    <!-- This sits in column 4, spans 2 rows tall = your 2.5 cards request. Change span 2 to span 3 to make taller -->
+    <div style="grid-column:4; grid-row:2 / span 2; border:1.5px solid #1a1a1a; background:#fdfcf6; display:flex; flex-direction:column; overflow:hidden;">
+      <div style="background:#FFD84D; padding:10px 12px; font-family:Georgia, Times, serif; font-weight:700; font-size:15px; border-bottom:1.5px solid #1a1a1a;">Did you know...?</div>
+      <img src="banana_result.jpg" alt="Green bananas" style="width:100%; height:110px; object-fit:cover; display:block; border-bottom:1.5px solid #1a1a1a;">
+      <div style="padding:10px 10px; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-size:12px; line-height:1.4;">
+        There are more than 1000 varieties of bananas in the world. We can eat about half of them. The bananas we find in the grocery store in the USA are called Cavendish, and 30 to 50 different types can be found in a Thai market.
+      </div>
+    </div>
+
+  </div> <!-- END GRID - this was missing, this is why map was small -->
+
+  <!-- MAP SECTION - now outside grid, full width again -->
   <div style="margin-top:72px; border-top:1px solid rgba(0,0,0,.12); padding-top:24px;">
     <div class="eyebrow" style="margin-bottom:16px;">The Map</div>
     <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px;">
-      
-      <!-- LEFT -->
       <div style="position:relative; border:1px solid rgba(0,0,0,.12); overflow:hidden; background:#fdfcf6; aspect-ratio:4/3;">
         <img src="Mapwatercolor_result.jpg" alt="World map watercolor" style="width:100%; height:100%; object-fit:cover; display:block; opacity:0.3;">
         <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; padding:20px; text-align:center;">
           <h2 style="font-family:Georgia, Times, serif; font-size:20px; line-height:1; color:#C65A0A; max-width:80%;">~a general two dimensional understanding may or may not help~</h2>
         </div>
       </div>
-
-      <!-- RIGHT -->
       <div>
         <p style="font-size:14px; margin-bottom:12px; line-height:1.4;">Nan girl hangin' out with grandma dropped everything to show me around town</p>
         <div style="border:1px solid rgba(0,0,0,.12); overflow:hidden; background:#fdfcf6; aspect-ratio:4/3;">
@@ -319,13 +169,10 @@
         </div>
         <p style="margin-top:12px; font-size:11px; letter-spacing:.12em; text-transform:uppercase; opacity:.6;">Nan, Thailand</p>
       </div>
-
     </div>
   </div>
 
 </div>
-
 <footer>IN RUINS</footer>
-
 </body>
 </html>
