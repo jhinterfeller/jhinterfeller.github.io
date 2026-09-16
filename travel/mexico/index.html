@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -6,11 +6,11 @@
 <title>MEXICO — IN RUINS</title>
 <style>
   *{box-sizing:border-box;margin:0;padding:0}
-  body{background:#E8E0C9;color:#1a1a1a;font-family:Georgia,"Times New Roman",Times,serif}
+  body{background:#E8E0C9;color:#1a1a1a}
   a{color:inherit;text-decoration:none}
-  
-  /* FUNCTIONAL TOP RAIL - matches Travel tab screenshot */
-  header{
+
+  /* TOP RAIL - from USA page - this is what you wanted */
+  .site-header{
     max-width:1300px;
     margin:0 auto;
     padding:24px 20px;
@@ -19,53 +19,56 @@
     align-items:center;
     border-bottom:1px solid rgba(0,0,0,.15);
   }
-  header .logo{
+  .site-header .logo{
     font-family:Georgia,"Times New Roman",Times,serif;
-    font-weight:700;
-    font-size:22px;
-    letter-spacing:.08em;
-    color:#1a1a1a;
+    font-weight:700;font-size:22px;letter-spacing:.08em;color:#1a1a1a;
   }
-  header nav{
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  .site-header nav{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+  .site-header nav a{
+    font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+    margin-left:24px;opacity:.6;
   }
-  header nav a{
-    font-size:11px;
-    letter-spacing:.18em;
-    text-transform:uppercase;
-    margin-left:24px;
-    opacity:.6;
-  }
-  header nav a:hover{opacity:1}
-  header nav span.active{
-    font-size:11px;
-    letter-spacing:.18em;
-    text-transform:uppercase;
-    margin-left:24px;
-    border-bottom:1px solid #000;
-    padding-bottom:2px;
-  }
+  .site-header nav a:hover{opacity:1}
 
-  .wrap{max-width:1300px;margin:0 auto;padding:18px 14px 60px}
-  .mast{border-bottom:3px double #1a1a1a;padding:10px 0 12px;margin-bottom:14px;text-align:center}
-  .mast h1{font-size:64px;line-height:.9;letter-spacing:.02em}
-  .mast .sub{display:flex;justify-content:space-between;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:10px;letter-spacing:.18em;text-transform:uppercase;margin-top:8px;border-top:1px solid #1a1a1a;padding-top:6px}
-  .paper{display:grid;grid-template-columns:1.15fr .9fr .9fr;gap:14px;align-items:start}
-  .story{background:#fdfcf6;border:1.5px solid #1a1a1a;padding:14px 14px 12px}
-  .story h2{font-size:28px;line-height:.95;margin:6px 0 8px}
-  .story h3{font-size:18px;line-height:1;margin:8px 0 6px;border-top:1px solid #1a1a1a;padding-top:8px}
-  .kicker{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:9px;letter-spacing:.2em;text-transform:uppercase;font-weight:600}
-  .story p{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:13px;line-height:1.45;margin-bottom:8px}
-  .story img{width:100%;display:block;border:1px solid #1a1a1a;margin:8px 0 8px}
-  .tiny{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:9px;letter-spacing:.14em;text-transform:uppercase;opacity:.6;margin-top:6px}
-  footer{max-width:1300px;margin:0 auto;padding:14px 20px;border-top:2px solid #1a1a1a;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:10px;letter-spacing:.14em;text-transform:uppercase;opacity:.6}
-  @media(max-width:900px){.paper{grid-template-columns:1fr 1fr}.mast h1{font-size:46px}header{flex-direction:column;gap:12px}}
-  @media(max-width:600px){.paper{grid-template-columns:1fr}}
+  /* NEWSPAPER STYLES - from Mexico Times - this was missing */
+  .page-wrap{background:#E8E0C9;min-height:100vh;padding:14px 10px 40px}
+  @media(min-width:768px){.page-wrap{padding:28px 22px 60px}}
+  .paper{background:#fdfcf6;max-width:1240px;margin:0 auto;border:1.5px solid #1a1a1a;box-shadow:0 1px 0 #1a1a1a,0 8px 24px rgba(26,26,26,0.12);padding:18px 14px 24px;position:relative}
+  @media(min-width:768px){.paper{padding:28px 28px 36px}}
+  .masthead{text-align:center;border-bottom:3px double #1a1a1a;padding-bottom:14px;margin-bottom:18px}
+  .mexico-times-line{font-family:Georgia,Georgia,serif;font-size:28px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;margin-top:6px}
+  .vol-line,.date-line{font-family:Helvetica, Arial,Helvetica,Arial,sans-serif;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;line-height:1.3;text-align:center}
+  .vol-line{margin-top:14px;border-top:1px solid #1a1a1a;border-bottom:1px solid #1a1a1a;padding:7px 8px;font-weight:700}
+  .date-line{margin-top:8px;opacity:.85}
+  .hero-box{border:2px solid #1a1a1a;padding:16px 14px 14px;margin-bottom:22px;background:#fdfcf6}
+  @media(min-width:768px){.hero-box{padding:20px 20px 16px}}
+  .hero-headline{font-family:Georgia,Georgia,serif;font-size:30px;font-weight:700;line-height:0.92;letter-spacing:-0.01em;text-transform:uppercase;text-align:center;margin:0 0 10px}
+  .hero-subhed{font-family:Georgia,Georgia,serif;font-style:italic;font-size:15px;line-height:1.25;text-align:center;max-width:720px;margin:0 auto 16px;color:#2a2a2a}
+  .hero-grid{display:grid;grid-template-columns:130px 1fr;gap:16px;align-items:start;border-top:1px solid rgba(26,26,26,0.18);padding-top:14px}
+  @media(max-width:640px){.hero-grid{grid-template-columns:1fr}}
+  .hero-photo-img{width:120px;height:160px;object-fit:cover;border:1.5px solid #1a1a1a;display:block}
+  @media(max-width:640px){.hero-photo-img{width:100%;height:200px}}
+  .hero-text{font-family:Helvetica, Arial,sans-serif;font-size:12.5px;line-height:1.55;text-align:justify}
+  .hero-text p{margin:0 0 0.65em}
+  .newspaper-cols{column-count:4;column-gap:28px;column-rule:1px solid rgba(26,26,26,0.14)}
+  @media(max-width:1100px){.newspaper-cols{column-count:2}}
+  @media(max-width:640px){.newspaper-cols{column-count:1;column-rule:none}}
+  .article{break-inside:avoid;margin-bottom:28px;padding-bottom:16px;border-bottom:1px solid rgba(26,26,26,0.12)}
+  .kicker{font-family:Helvetica, Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#6b6b6b;margin-bottom:6px}
+  .article-headline{font-family:Georgia,serif;font-size:19px;font-weight:700;line-height:1.05;margin:0 0 10px}
+  .hook-photo{border:1.5px dashed #1a1a1a;background:rgba(232,224,201,0.55);display:flex;align-items:center;justify-content:center;text-align:center;font-family:Helvetica, Arial,sans-serif;font-size:9px;font-weight:700;letter-spacing:0.08em;line-height:1.25;text-transform:uppercase;padding:6px}
+  .tiny-photo{width:100%;height:110px;margin-bottom:10px}
+  .article-body{font-family:Helvetica, Arial,sans-serif;font-size:12.5px;line-height:1.55;text-align:justify}
+  .continued{display:inline-block;margin-top:10px;font-family:Helvetica, Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#1a1a1a;text-decoration:none;border-bottom:1px solid #1a1a1a;padding-bottom:1px}
+  .footer{margin-top:18px;border-top:3px double #1a1a1a;padding-top:14px;text-align:center;font-family:Georgia,serif;font-size:13px;letter-spacing:0.28em;text-transform:uppercase;font-weight:700}
+
+  @media(max-width:900px){.site-header{flex-direction:column;gap:12px}}
 </style>
 </head>
 <body>
 
-<header>
+<!-- FIXED: Links back to main categories from /travel/mexico/ -->
+<header class="site-header">
   <a href="../../index.html" class="logo">IN RUINS</a>
   <nav>
     <a href="../../travel.html">Travel</a>
@@ -80,7 +83,7 @@
 <div class="page-wrap">
   <div class="paper">
     <header class="masthead">
-           <div class="mexico-times-line">Mexico Times</div>
+      <div class="mexico-times-line">Mexico Times</div>
       <div class="vol-line">VOL. II — YUCATAN • TEOTIHUACAN • CHIAPAS — FIELD ARCHIVE — 50 CENTS</div>
       <div class="date-line">Sunday, September 6, 2026 — Nakhon Ratchasima Edition</div>
     </header>
@@ -89,7 +92,6 @@
       <h1 class="hero-headline">CENOTES, PYRAMIDS AND THE HOSPITALITY THAT KEEPS BRINGING US BACK</h1>
       <div class="hero-subhed">From balloon pilots over Teotihuacan to medicine men in healing camps, a field ledger from the Maya bungalows.</div>
       <div class="hero-grid">
-        <!-- PUT YOUR PHOTO LINK HERE -->
         <img src="wbchichenscale.png" alt="CHICHEN ITZA AT NIGHT" class="hero-photo-img">
         <div class="hero-text">
           <p>Your 2-3 paragraph hook. Keep it to 12.5px, justified, tight. The road from Valladolid to Yaxunah is limestone dust and low jungle, cenote water cold enough to stop your breath. We came for a well and found a portal — rope, buckets, kids calling names from the edge.</p>
@@ -113,4 +115,3 @@
   </div>
 </div>
 </body>
-</html>
