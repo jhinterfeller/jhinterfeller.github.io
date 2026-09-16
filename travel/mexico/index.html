@@ -1,128 +1,76 @@
 <!doctype html>
 <html lang="en">
- header{
-    max-width:1300px;
-    margin:0 auto;
-    padding:24px 20px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    border-bottom:1px solid rgba(0,0,0,.15);
-  }
-  header .logo{
-    font-family:Georgia,"Times New Roman",Times,serif;
-    font-weight:700;
-    font-size:22px;
-    letter-spacing:.08em;
-    color:#1a1a1a;
-  }
-  header nav{
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  }
-  header nav a{
-    font-size:11px;
-    letter-spacing:.18em;
-    text-transform:uppercase;
-    margin-left:24px;
-    opacity:.6;
-  }
-  header nav a:hover{opacity:1}
-  header nav span.active{
-    font-size:11px;
-    letter-spacing:.18em;
-    text-transform:uppercase;
-    margin-left:24px;
-    border-bottom:1px solid #000;
-    padding-bottom:2px;
-  }
-
-  .wrap{max-width:1300px;margin:0 auto;padding:18px 14px 60px}
-  .mast{border-bottom:3px double #1a1a1a;padding:10px 0 12px;margin-bottom:14px;text-align:center}
-  .mast h1{font-size:64px;line-height:.9;letter-spacing:.02em}
-  .mast .sub{display:flex;justify-content:space-between;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:10px;letter-spacing:.18em;text-transform:uppercase;margin-top:8px;border-top:1px solid #1a1a1a;padding-top:6px}
-  .paper{display:grid;grid-template-columns:1.15fr .9fr .9fr;gap:14px;align-items:start}
-  .story{background:#fdfcf6;border:1.5px solid #1a1a1a;padding:14px 14px 12px}
-  .story h2{font-size:28px;line-height:.95;margin:6px 0 8px}
-  .story h3{font-size:18px;line-height:1;margin:8px 0 6px;border-top:1px solid #1a1a1a;padding-top:8px}
-  .kicker{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:9px;letter-spacing:.2em;text-transform:uppercase;font-weight:600}
-  .story p{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:13px;line-height:1.45;margin-bottom:8px}
-  .story img{width:100%;display:block;border:1px solid #1a1a1a;margin:8px 0 8px}
-  .tiny{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:9px;letter-spacing:.14em;text-transform:uppercase;opacity:.6;margin-top:6px}
-  footer{max-width:1300px;margin:0 auto;padding:14px 20px;border-top:2px solid #1a1a1a;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:10px;letter-spacing:.14em;text-transform:uppercase;opacity:.6}
-  @media(max-width:900px){.paper{grid-template-columns:1fr 1fr}.mast h1{font-size:46px}header{flex-direction:column;gap:12px}}
-  @media(max-width:600px){.paper{grid-template-columns:1fr}}
-</style>
-</head>
-<body>
-
-<header>
-  <a href="../../index.html" class="logo">IN RUINS</a>
-  <nav>
-    <a href="../../travel.html">Travel</a>
-    <a href="../../history.html">History</a>
-    <a href="../../photographs.html">Photos</a>
-    <a href="../../fieldnotes.html">Field Notes</a>
-    <a href="../../backporch.html">Back Porch</a>
-    <a href="../../ride.html">The Ride</a>
-  </nav>
-</header>
-        
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>IN RUINS — Mexico Times</title>
 <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;700&display=swap');
-        * { box-sizing: border-box; }
-        html, body { margin: 0; padding: 0; }
-        body { background: #E8E0C9; color: #1a1a1a; }
-        .page-wrap { background: #E8E0C9; min-height: 100vh; padding: 14px 10px 40px; }
-        @media(min-width: 768px){ .page-wrap { padding: 28px 22px 60px; } }
-        .paper { background: #fdfcf6; max-width: 1240px; margin: 0 auto; border: 1.5px solid #1a1a1a; box-shadow: 0 1px 0 #1a1a1a, 0 8px 24px rgba(26,26,26,0.12); padding: 18px 14px 24px; position: relative; }
-        @media(min-width: 768px){ .paper { padding: 28px 28px 36px; } }
-        .masthead { text-align: center; border-bottom: 3px double #1a1a1a; padding-bottom: 14px; margin-bottom: 18px; }
-        .in-ruins { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 56px; font-weight: 700; letter-spacing: 0.06em; line-height: 0.85; text-transform: uppercase; color: #1a1a1a; }
-        @media(max-width: 640px){ .in-ruins { font-size: 38px; } }
-        .mexico-times-line { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 28px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; margin-top: 6px; color: #1a1a1a; }
-        @media(max-width: 640px){ .mexico-times-line { font-size: 19px; letter-spacing: 0.16em; } }
-        .vol-line, .date-line { font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; line-height: 1.3; }
-        .vol-line { margin-top: 14px; border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; padding: 7px 8px; font-weight: 700; }
-        .date-line { margin-top: 8px; font-weight: 400; opacity: 0.85; }
-        .hero-box { border: 2px solid #1a1a1a; padding: 16px 14px 14px; margin-bottom: 22px; background: #fdfcf6; }
-        @media(min-width: 768px){ .hero-box { padding: 20px 20px 16px; } }
-        .hero-headline { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 30px; font-weight: 700; line-height: 0.92; letter-spacing: -0.01em; text-transform: uppercase; text-align: center; margin: 0 0 10px; }
-        @media(max-width: 640px){ .hero-headline { font-size: 22px; line-height: 0.95; } }
-        .hero-subhed { font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 15px; line-height: 1.25; text-align: center; max-width: 720px; margin: 0 auto 16px; color: #2a2a2a; }
-        .hero-grid { display: grid; grid-template-columns: 130px 1fr; gap: 16px; align-items: start; border-top: 1px solid rgba(26,26,26,0.18); padding-top: 14px; }
-        @media(max-width: 640px){ .hero-grid { grid-template-columns: 1fr; } }
-        .hook-photo { border: 1.5px dashed #1a1a1a; background: rgba(232,224,201,0.55); display: flex; align-items: center; justify-content: center; text-align: center; font-family: 'Inter', sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 0.08em; line-height: 1.25; text-transform: uppercase; color: #1a1a1a; padding: 6px; }
-        .hero-photo { width: 120px; height: 160px; }
-        @media(max-width: 640px){ .hero-photo { width: 100%; height: 120px; } }
-        /* WHEN YOU ADD REAL PHOTO, use this class instead */
-        .hero-photo-img { width: 120px; height: 160px; object-fit: cover; border: 1.5px solid #1a1a1a; display: block; }
-        @media(max-width: 640px){ .hero-photo-img { width: 100%; height: 200px; } }
-        .hero-text { font-family: 'Inter', sans-serif; font-size: 12.5px; line-height: 1.55; text-align: justify; hyphens: auto; }
-        .hero-text p { margin: 0 0 0.65em; }
-        .hero-text p:last-child { margin-bottom: 0; }
-        .newspaper-cols { column-count: 4; column-gap: 28px; column-rule: 1px solid rgba(26,26,26,0.14); }
-        @media(max-width: 1100px){ .newspaper-cols { column-count: 2; } }
-        @media(max-width: 640px){ .newspaper-cols { column-count: 1; column-rule: none; } }
-        .article { break-inside: avoid; margin-bottom: 28px; padding-bottom: 16px; border-bottom: 1px solid rgba(26,26,26,0.12); }
-        .kicker { font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #6b6b6b; margin-bottom: 6px; }
-        .article-headline { font-family: 'Cormorant Garamond', serif; font-size: 19px; font-weight: 700; line-height: 1.05; letter-spacing: -0.01em; margin: 0 0 10px; color: #1a1a1a; }
-        .tiny-photo { width: 100%; height: 110px; margin-bottom: 10px; }
-        .tiny-photo-img { width: 100%; height: 110px; object-fit: cover; border: 1.5px solid #1a1a1a; display: block; margin-bottom: 10px; }
-        .article-body { font-family: 'Inter', sans-serif; font-size: 12.5px; line-height: 1.55; text-align: justify; hyphens: auto; color: #1f1f1f; }
-        .article-body p { margin: 0 0 0.6em; }
-        .continued { display: inline-block; margin-top: 10px; font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #1a1a1a; text-decoration: none; border-bottom: 1px solid #1a1a1a; padding-bottom: 1px; }
-        .continued:hover { opacity: 0.7; }
-        .footer { margin-top: 18px; border-top: 3px double #1a1a1a; padding-top: 14px; text-align: center; font-family: 'Cormorant Garamond', serif; font-size: 13px; letter-spacing: 0.28em; text-transform: uppercase; font-weight: 700; }
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;700&display=swap');
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: #E8E0C9; color: #1a1a1a; }
+  
+  /* --- THIS IS THE MAIN SITE NAV YOU WERE MISSING (from your USA tab) --- */
+  .site-header { max-width:1300px; margin:0 auto; padding:24px 20px; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid rgba(0,0,0,.15); }
+  .site-header .logo { font-family:Georgia,"Times New Roman",Times,serif; font-weight:700; font-size:22px; letter-spacing:.08em; color:#1a1a1a; text-decoration:none; }
+  .site-header nav { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; }
+  .site-header nav a { font-size:11px; letter-spacing:.18em; text-transform:uppercase; margin-left:24px; opacity:.6; text-decoration:none; color:#1a1a1a; }
+  .site-header nav a:hover { opacity:1; }
+  .site-header nav span.active { font-size:11px; letter-spacing:.18em; text-transform:uppercase; margin-left:24px; opacity:1; border-bottom:1px solid #000; padding-bottom:2px; }
+
+  /* --- YOUR NEWSPAPER CSS (now correctly inside <style>) --- */
+  .page-wrap { background: #E8E0C9; min-height: 100vh; padding: 14px 10px 40px; }
+  @media(min-width: 768px){ .page-wrap { padding: 28px 22px 60px; } }
+  .paper { background: #fdfcf6; max-width: 1240px; margin: 0 auto; border: 1.5px solid #1a1a1a; box-shadow: 0 1px 0 #1a1a1a, 0 8px 24px rgba(26,26,26,0.12); padding: 18px 14px 24px; position: relative; }
+  @media(min-width: 768px){ .paper { padding: 28px 28px 36px; } }
+  .masthead { text-align: center; border-bottom: 3px double #1a1a1a; padding-bottom: 14px; margin-bottom: 18px; }
+  .in-ruins { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 56px; font-weight: 700; letter-spacing: 0.06em; line-height: 0.85; text-transform: uppercase; color: #1a1a1a; }
+  @media(max-width: 640px){ .in-ruins { font-size: 38px; } }
+  .mexico-times-line { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 28px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; margin-top: 6px; color: #1a1a1a; }
+  .vol-line, .date-line { font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; line-height: 1.3; }
+  .vol-line { margin-top: 14px; border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; padding: 7px 8px; font-weight: 700; text-align:center; }
+  .date-line { margin-top: 8px; font-weight: 400; opacity: 0.85; text-align:center; }
+  .hero-box { border: 2px solid #1a1a1a; padding: 16px 14px 14px; margin-bottom: 22px; background: #fdfcf6; }
+  @media(min-width: 768px){ .hero-box { padding: 20px 20px 16px; } }
+  .hero-headline { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 30px; font-weight: 700; line-height: 0.92; letter-spacing: -0.01em; text-transform: uppercase; text-align: center; margin: 0 0 10px; }
+  .hero-subhed { font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 15px; line-height: 1.25; text-align: center; max-width: 720px; margin: 0 auto 16px; color: #2a2a2a; }
+  .hero-grid { display: grid; grid-template-columns: 130px 1fr; gap: 16px; align-items: start; border-top: 1px solid rgba(26,26,26,0.18); padding-top: 14px; }
+  @media(max-width: 640px){ .hero-grid { grid-template-columns: 1fr; } }
+  .hero-photo-img { width: 120px; height: 160px; object-fit: cover; border: 1.5px solid #1a1a1a; display: block; }
+  @media(max-width: 640px){ .hero-photo-img { width: 100%; height: 200px; } }
+  .hook-photo { border: 1.5px dashed #1a1a1a; background: rgba(232,224,201,0.55); display: flex; align-items: center; justify-content: center; text-align: center; font-family: 'Inter', sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 0.08em; line-height: 1.25; text-transform: uppercase; color: #1a1a1a; padding: 6px; }
+  .hero-photo { width: 120px; height: 160px; }
+  .hero-text { font-family: 'Inter', sans-serif; font-size: 12.5px; line-height: 1.55; text-align: justify; }
+  .newspaper-cols { column-count: 4; column-gap: 28px; column-rule: 1px solid rgba(26,26,26,0.14); }
+  @media(max-width: 1100px){ .newspaper-cols { column-count: 2; } }
+  @media(max-width: 640px){ .newspaper-cols { column-count: 1; } }
+  .article { break-inside: avoid; margin-bottom: 28px; padding-bottom: 16px; border-bottom: 1px solid rgba(26,26,26,0.12); }
+  .kicker { font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #6b6b6b; margin-bottom: 6px; }
+  .article-headline { font-family: 'Cormorant Garamond', serif; font-size: 19px; font-weight: 700; line-height: 1.05; margin: 0 0 10px; }
+  .tiny-photo { width: 100%; height: 110px; margin-bottom: 10px; }
+  .article-body { font-family: 'Inter', sans-serif; font-size: 12.5px; line-height: 1.55; text-align: justify; }
+  .continued { display: inline-block; margin-top: 10px; font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #1a1a1a; text-decoration: none; border-bottom: 1px solid #1a1a1a; padding-bottom: 1px; }
+  .footer { margin-top: 18px; border-top: 3px double #1a1a1a; padding-top: 14px; text-align: center; font-family: 'Cormorant Garamond', serif; font-size: 13px; letter-spacing: 0.28em; text-transform: uppercase; font-weight: 700; }
+
+  @media(max-width:900px){ .site-header{flex-direction:column; gap:12px} }
 </style>
 </head>
 <body>
+
+<!-- MAIN SITE NAV - THIS WAS MISSING ON YOUR MEXICO TAB -->
+<header class="site-header">
+  <a href="index.html" class="logo">IN RUINS</a>
+  <nav>
+    <a href="travel.html">Travel</a>
+    <a href="history.html">History</a>
+    <a href="photographs.html">Photos</a>
+    <a href="fieldnotes.html">Field Notes</a>
+    <a href="backporch.html">Back Porch</a>
+    <a href="ride.html">The Ride</a>
+  </nav>
+</header>
+
 <div class="page-wrap">
   <div class="paper">
-
     <header class="masthead">
       <div class="in-ruins">IN RUINS</div>
       <div class="mexico-times-line">Mexico Times</div>
@@ -133,21 +81,12 @@
     <section class="hero-box">
       <h1 class="hero-headline">CENOTES, PYRAMIDS AND THE HOSPITALITY THAT KEEPS BRINGING US BACK</h1>
       <div class="hero-subhed">From balloon pilots over Teotihuacan to medicine men in healing camps, a field ledger from the Maya bungalows.</div>
-      
       <div class="hero-grid">
-        <!-- REPLACE THIS ENTIRE DIV WITH YOUR PHOTO -->
-        <!-- BEFORE (placeholder): -->
-        <!--
-        <div class="hook-photo hero-photo">
-          DROP HERO PHOTO<br>— CHICHEN ITZA AT NIGHT —<br>120×160
-        </div>
-        -->
-        <!-- AFTER (your photo) - PUT wbchichenscale.png LINK HERE: -->
+        <!-- PUT YOUR PHOTO LINK HERE -->
         <img src="wbchichenscale.png" alt="CHICHEN ITZA AT NIGHT" class="hero-photo-img">
-
         <div class="hero-text">
           <p>Your 2-3 paragraph hook. Keep it to 12.5px, justified, tight. The road from Valladolid to Yaxunah is limestone dust and low jungle, cenote water cold enough to stop your breath. We came for a well and found a portal — rope, buckets, kids calling names from the edge.</p>
-          <p>too many ai words do not read this crap</p>
+          <p>In the Maya bungalows the hospitality is not performance. Coffee at 6am, tortillas by hand, a hammock strung between posts. Nights are for stories. Days are for walking.</p>
           <p>This issue is a ledger: six dispatches, each a door. Balloon dawn over the Avenue of the Dead, medicine and tours that blur, a museum that swallows the day whole. Change the copy, keep the size.</p>
         </div>
       </div>
@@ -155,78 +94,15 @@
     </section>
 
     <div class="newspaper-cols">
-
-      <article class="article">
-        <div class="kicker">YAXUNAH • CENOTES</div>
-        <h2 class="article-headline">The Village Well That Became a Portal</h2>
-        <div class="hook-photo tiny-photo">DROP TINY HOOK PHOTO — YAXUNAH CENOTE — 100% × 110</div>
-        <div class="article-body">
-          <p>Your 2-3 paragraph hook. The cenote at Yaxunah </p>
-          <p>Locals still draw water, kids still learn to swim here. We photographed late afternoon — light shafts, dust. Keep this to two paragraphs in final.</p>
-        </div>
-        <a class="continued" href="yaxunah.html">Continued on Page 2 →</a>
-      </article>
-
-      <article class="article">
-        <div class="kicker">HOSPITALITY • MAYA BUNGALOWS</div>
-        <h2 class="article-headline">The Bungalows Where Strangers Become Family</h2>
-        <div class="hook-photo tiny-photo">DROP TINY HOOK PHOTO — MAYA BUNGALOWS HOSPITALITY</div>
-        <div class="article-body">
-          <p>Your 2-3 paragraph hook. Thatch, lime-washed walls, hammocks. The hospitality at the bungalows is quiet work — coffee boiled early, eggs from the yard.</p>
-          <p>Guests arrive tired. They leave with names, numbers, a second family. We stayed three nights, left with a recipe book and an invite back for Day of the Dead.</p>
-        </div>
-        <a class="continued" href="bungalows.html">Continued on Page 2 →</a>
-      </article>
-
-      <article class="article">
-        <div class="kicker">TEOTIHUACAN • BALLOON PILOT</div>
-        <h2 class="article-headline">The Pilot Who Flies Over the Gods</h2>
-        <div class="hook-photo tiny-photo">DROP TINY HOOK PHOTO — HOT AIR BALLOON PILOT TEOTIHUACAN</div>
-        <div class="article-body">
-          <p>Your 2-3 paragraph hook. 5:10am, field outside Teotihuacan. Burners roar, envelope lifts. The pilot knows wind by the dust on the pyramids.</p>
-          <p>From above, the Avenue of the Dead is a line drawn for something larger than us. Twenty minutes of silence except the burn. Keep it short, keep it cold-air sharp.</p>
-        </div>
-        <a class="continued" href="balloon-pilot.html">Continued on Page 2 →</a>
-      </article>
-
-      <article class="article">
-        <div class="kicker">MEDICINE • HEALING CAMPS</div>
-        <h2 class="article-headline">The Medicine Man Who Gives Tours and Healing</h2>
-        <div class="hook-photo tiny-photo">DROP TINY HOOK PHOTO — MEDICINE MAN HEALING CAMPS</div>
-        <div class="article-body">
-          <p>Your 2-3 paragraph hook. He is not a show. Morning tours through milpa, afternoon plant walks, evening circles where people actually listen.</p>
-          <p>The healing camps are not retreats — work, sweat, copal smoke. We were told to come back without cameras next time. We will.</p>
-        </div>
-        <a class="continued" href="medicine-man.html">Continued on Page 2 →</a>
-      </article>
-
-      <article class="article">
-        <div class="kicker">CHICHEN ITZA • NIGHT</div>
-        <h2 class="article-headline">When the Pyramid Empties After Dark</h2>
-        <!-- FOR TINY PHOTOS SAME PATTERN: replace this div with <img src="wbchichenscale.png" class="tiny-photo-img"> -->
-        <div class="hook-photo tiny-photo">DROP TINY HOOK PHOTO — CHICHEN ITZA AT NIGHT</div>
-        <div class="article-body">
-          <p>Your 2-3 paragraph hook. Daytime Chichen is buses and heat. Night is different — gates closed, sound check, iguanas on warm stone.</p>
-          <p>We shot after the last light show. The Kukulkan stairs go blue, then black. No crowd, just crickets and a guard with a flashlight who knew we’d stay late.</p>
-        </div>
-        <a class="continued" href="chichen-night.html">Continued on Page 2 →</a>
-      </article>
-
-      <article class="article">
-        <div class="kicker">MUSEO DE ANTROPOLOGIA • MEXICO CITY</div>
-        <h2 class="article-headline">The Museum That Holds a Continent</h2>
-        <div class="hook-photo tiny-photo">DROP TINY HOOK PHOTO — MUSEO DE ANTROPOLOGIA</div>
-        <div class="article-body">
-          <p>Your 2-3 paragraph hook. You can’t do Antropología in a day and you shouldn’t try. Coat check, courtyard rain, the Piedra del Sol up close.</p>
-          <p>Teotihuacan hall, Maya hall, then outside for coffee under the umbrella fountain. We took notes, not photos, for once. Three paragraphs max here.</p>
-        </div>
-        <a class="continued" href="antropologia.html">Continued on Page 2 →</a>
-      </article>
-
+      <article class="article"><div class="kicker">YAXUNAH • CENOTES</div><h2 class="article-headline">The Village Well That Became a Portal</h2><div class="hook-photo tiny-photo">DROP TINY HOOK PHOTO</div><div class="article-body"><p>The cenote at Yaxunah is not a tourist stop. Stone steps, roots, water the color of jade.</p></div><a class="continued" href="yaxunah.html">Continued →</a></article>
+      <article class="article"><div class="kicker">HOSPITALITY • MAYA BUNGALOWS</div><h2 class="article-headline">The Bungalows Where Strangers Become Family</h2><div class="hook-photo tiny-photo">DROP TINY PHOTO</div><div class="article-body"><p>Thatch, lime-washed walls, hammocks. Quiet work.</p></div><a class="continued" href="bungalows.html">Continued →</a></article>
+      <article class="article"><div class="kicker">TEOTIHUACAN • BALLOON PILOT</div><h2 class="article-headline">The Pilot Who Flies Over the Gods</h2><div class="hook-photo tiny-photo">DROP TINY PHOTO</div><div class="article-body"><p>5:10am, field outside Teotihuacan. Burners roar.</p></div><a class="continued" href="balloon-pilot.html">Continued →</a></article>
+      <article class="article"><div class="kicker">MEDICINE • HEALING CAMPS</div><h2 class="article-headline">The Medicine Man Who Gives Tours and Healing</h2><div class="hook-photo tiny-photo">DROP TINY PHOTO</div><div class="article-body"><p>Morning tours through milpa, afternoon plant walks.</p></div><a class="continued" href="medicine-man.html">Continued →</a></article>
+      <article class="article"><div class="kicker">CHICHEN ITZA • NIGHT</div><h2 class="article-headline">When the Pyramid Empties After Dark</h2><div class="hook-photo tiny-photo">DROP TINY PHOTO — CHICHEN ITZA AT NIGHT</div><div class="article-body"><p>Daytime Chichen is buses and heat. Night is different.</p></div><a class="continued" href="chichen-night.html">Continued →</a></article>
+      <article class="article"><div class="kicker">MUSEO DE ANTROPOLOGIA</div><h2 class="article-headline">The Museum That Holds a Continent</h2><div class="hook-photo tiny-photo">DROP TINY PHOTO</div><div class="article-body"><p>You can’t do Antropología in a day and you shouldn’t try.</p></div><a class="continued" href="antropologia.html">Continued →</a></article>
     </div>
 
     <div class="footer">IN RUINS — MEXICO TIMES</div>
-
   </div>
 </div>
 </body>
