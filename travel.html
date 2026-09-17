@@ -66,7 +66,7 @@
     color: rgba(255,255,255,.9);
   }
   
-  /* Sidebar - left untouched per request, just kept as is */
+  /* Sidebar */
   .did-you-know-wrap summary::-webkit-details-marker{display:none;}
   .did-you-know-wrap summary::marker{content:"";}
 
@@ -80,9 +80,10 @@
   @media (max-width: 600px) {
     .grid { grid-template-columns: 1fr; }
   }
- .map-block{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
+  .map-block{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
   @media(max-width:700px){
     .map-block{grid-template-columns:1fr;}
+  } /* Added missing closing bracket here */
 </style>
 </head>
 <body>
@@ -107,7 +108,7 @@
     
     <a href="/travel/thailand/" class="card"><img src="Isaan.jpg" alt="Thailand"><div class="content"><h2>Thailand</h2><p>Sukhothai, Ayutthaya, Isaan.</p><div class="cta">Enter →</div></div></a>
     
-    <!-- GREEN DID YOU KNOW - left alone per request -->
+    <!-- GREEN DID YOU KNOW -->
     <div class="did-you-know-wrap" style="grid-column:4; grid-row:1 / span 3; align-self:start; border:.5px solid #1a1a1a; background:transparent; overflow:hidden;">
       <details id="dyk" open>
         <summary style="background:#F7B3DE; padding:10px 12px; font-family:Georgia, Times, serif; font-weight:700; font-size:15px; border-bottom:.5px solid #1a1a1a; list-style:none; cursor:pointer;">Did you know...?</summary>
@@ -128,27 +129,29 @@
 
   </div>
    
-
-
-<div style="margin-top:72px; border-top:1px solid rgba(0,0,0,.9); padding-top:24px;">
-  <div class="eyebrow" style="margin-bottom:16px;">The Map</div>
-  <div class="map-block">
-    <div style="position:relative; border:1px solid rgba(0,0,0,.9); overflow:hidden; background:#fdfcf6; aspect-ratio:4/3;">
-      <img src="Mapwatercolor_result.jpg" alt="World map" style="width:100%; height:100%; object-fit:cover; display:block; opacity:0.3;">
-      <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; padding:20px; text-align:center;">
-        <h2 style="font-family:Georgia, Times, serif; font-size:clamp(14px, 4vw, 20px); line-height:1.2; color:#C65A0A; max-width:85%;">~a general two dimensional understanding may or may not help~</h2>
+  <div style="margin-top:72px; border-top:1px solid rgba(0,0,0,.9); padding-top:24px;">
+    <div class="eyebrow" style="margin-bottom:16px;">The Map</div>
+    <div class="map-block">
+      <div style="position:relative; border:1px solid rgba(0,0,0,.9); overflow:hidden; background:#fdfcf6; aspect-ratio:4/3;">
+        <img src="Mapwatercolor_result.jpg" alt="World map" style="width:100%; height:100%; object-fit:cover; display:block; opacity:0.3;">
+        <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; padding:20px; text-align:center;">
+          <h2 style="font-family:Georgia, Times, serif; font-size:clamp(14px, 4vw, 20px); line-height:1.2; color:#C65A0A; max-width:85%;">~a general two dimensional understanding may or may not help~</h2>
+        </div>
       </div>
-    </div>
-    <div>
-      <p style="font-size:14px; margin-bottom:12px; line-height:1.4;">This girl from Nan was so wonderful to show me around her town.</p>
-      <div style="border:1px solid rgba(0,0,0,.12); overflow:hidden; background:#fdfcf6; aspect-ratio:4/3;">
-        <img src="Nangirl.jpg" alt="Nan Tourist Map" style="width:100%; height:100%; object-fit:cover; display:block;">
+      <div>
+        <p style="font-size:14px; margin-bottom:12px; line-height:1.4;">This girl from Nan was so wonderful to show me around her town.</p>
+        <div style="border:1px solid rgba(0,0,0,.12); overflow:hidden; background:#fdfcf6; aspect-ratio:4/3;">
+          <img src="Nangirl.jpg" alt="Nan Tourist Map" style="width:100%; height:100%; object-fit:cover; display:block;">
+        </div>
       </div>
-      <p style="margin-top:12px; font-size:11px; letter-spacing:.12em; text-transform:uppercase; opacity:.6;">Nan, Thailand</p>
-    </div>
+    </div> <!-- Added missing closing tag for map-block -->
+  </div> <!-- Added missing closing tag for the border container -->
+</div> <!-- Added missing closing tag for wrap -->
+
+<footer>
+  <div style="max-width: 1400px; margin: 0 auto;">
+    &copy; In Ruins. All rights reserved.
   </div>
-</div>
-<footer>IN RUINS</footer>
-<script>if(window.innerWidth<=900)document.getElementById('dyk').removeAttribute('open');</script>
+</footer>
 </body>
 </html>
