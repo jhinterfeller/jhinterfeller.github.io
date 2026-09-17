@@ -1,366 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CAMINO DE SANTIAGO TIMES - VOL IV - PAMPLONA</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CAMINO — IN RUINS</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#E8E0C9;color:#1a1a1a;font-family:Georgia,"Times New Roman",Times,serif}
+  a{color:inherit;text-decoration:none}
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  header{
+    max-width:1300px;
+    margin:0 auto;
+    padding:24px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid rgba(0,0,0,.15);
+  }
+  header .logo{font-family:Georgia,serif;font-weight:700;font-size:22px;letter-spacing:.08em}
+  header nav{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  header nav a{font-size:11px;letter-spacing:.18em;text-transform:uppercase;margin-left:24px;opacity:.6}
+  header nav a:hover{opacity:1}
 
-  <style>
-    /* Base */
-    * {
-      box-sizing: border-box;
-    }
+  .wrap{max-width:1300px;margin:0 auto;padding:18px 14px 60px}
 
-    html, body {
-      margin: 0;
-      padding: 0;
-    }
+  .mast{border-bottom:3px double #1a1a1a;padding:10px 0 12px;margin-bottom:14px;text-align:center}
+  .mast h1{font-size:64px;line-height:.9;letter-spacing:.02em}
+  .mast .sub{display:flex;justify-content:space-between;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:10px;letter-spacing:.18em;text-transform:uppercase;margin-top:8px;border-top:1px solid #1a1a1a;padding-top:6px}
 
-    body {
-      background: #E8E0C9;
-      color: #1a1a1a;
-      font-family: 'Inter', sans-serif;
-      -webkit-font-smoothing: antialiased;
-    }
+  .paper{display:grid;grid-template-columns:1.15fr .9fr .9fr;gap:14px;align-items:start}
+  .story{background:#fdfcf6;border:1.5px solid #1a1a1a;padding:14px 14px 12px}
+  .story h2{font-size:28px;line-height:.95;margin:6px 0 8px}
+  .kicker{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:9px;letter-spacing:.2em;text-transform:uppercase;font-weight:600}
+  .story p{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:13px;line-height:1.45;margin-bottom:8px}
+  .story img{width:100%;display:block;border:1px solid #1a1a1a;margin:8px 0 8px}
+  .placeholder{
+    border:1.5px dashed #1a1a1a;
+    background:rgba(232,224,201,.45);
+    display:flex;align-items:center;justify-content:center;
+    text-align:center;padding:20px 10px;margin:8px 0;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  }
+  .continued{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;border-bottom:1px solid #1a1a1a;display:inline-block}
 
-    /* Paper */
-    .page-wrap {
-      max-width: 1240px;
-      margin: 0 auto;
-      padding: 24px 18px 48px;
-    }
+  footer{max-width:1300px;margin:0 auto;padding:14px 20px;border-top:2px solid #1a1a1a;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:10px;letter-spacing:.14em;text-transform:uppercase;opacity:.6}
 
-    .paper {
-      background: #fdfcf6;
-      border: 1px solid #e6dcc6;
-      box-shadow: 0 2px 24px rgba(0,0,0,0.06);
-      padding: 26px 28px 22px;
-    }
-
-    /* Masthead */
-    .masthead {
-      text-align: center;
-      border-bottom: 3px double #1a1a1a;
-      padding-bottom: 16px;
-      margin-bottom: 18px;
-    }
-
-    .masthead-kicker {
-      font-size: 11px;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      font-weight: 600;
-      margin-bottom: 10px;
-    }
-
-    .masthead-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(32px, 6vw, 66px);
-      font-weight: 700;
-      line-height: 0.9;
-      letter-spacing: -0.02em;
-      text-transform: uppercase;
-      margin: 0;
-    }
-
-    .masthead-sub {
-      margin-top: 10px;
-      font-size: 11px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      font-weight: 500;
-      border-top: 1px solid #1a1a1a;
-      display: inline-block;
-      padding-top: 10px;
-    }
-
-    /* Hero */
-    .hero-box {
-      border: 1.5px solid #1a1a1a;
-      padding: 18px 18px 14px;
-      margin-bottom: 20px;
-    }
-
-    .hero-headline {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(26px, 3.2vw, 40px);
-      font-weight: 700;
-      line-height: 0.95;
-      text-transform: uppercase;
-      margin: 0 0 10px;
-      letter-spacing: -0.01em;
-    }
-
-    .hero-subhed {
-      font-size: 13px;
-      line-height: 1.4;
-      font-style: italic;
-      color: #2a2a2a;
-      margin: 0 0 14px;
-      max-width: 68ch;
-    }
-
-    .photo-placeholder {
-      border: 1.5px dashed #9a9a9a;
-      background: #f6f2e6;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      font-size: 11px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: #6b6b6b;
-      font-weight: 600;
-    }
-
-    .photo-hero {
-      height: 146px;
-      margin-bottom: 14px;
-    }
-
-    .photo-tiny {
-      height: 110px;
-      margin: 10px 0 10px;
-    }
-
-    .hero-body {
-      font-size: 12.5px;
-      line-height: 1.55;
-      text-align: justify;
-      hyphens: auto;
-      margin: 0;
-      color: #1e1e1e;
-    }
-
-    .hero-body + .hero-body {
-      margin-top: 10px;
-    }
-
-    .continued {
-      display: inline-block;
-      margin-top: 12px;
-      font-size: 10.5px;
-      font-weight: 700;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      text-decoration: none;
-      color: #1a1a1a;
-      border-bottom: 1px solid #1a1a1a;
-      padding-bottom: 1px;
-    }
-
-    .continued:hover {
-      opacity: 0.7;
-    }
-
-    /* Newspaper grid */
-    .newspaper-cols {
-      column-count: 4;
-      column-gap: 28px;
-      column-rule: 1px solid #e5ddd0;
-    }
-
-    .article-block {
-      break-inside: avoid;
-      -webkit-column-break-inside: avoid;
-      margin-bottom: 22px;
-      padding-bottom: 18px;
-      border-bottom: 1px solid #ede4d1;
-    }
-
-    .article-block:last-child {
-      border-bottom: 0;
-    }
-
-    .kicker {
-      font-size: 10px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      font-weight: 700;
-      margin: 0 0 6px;
-      color: #1a1a1a;
-    }
-
-    .article-head {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 19px;
-      line-height: 1.05;
-      font-weight: 700;
-      text-transform: uppercase;
-      margin: 0 0 6px;
-      letter-spacing: -0.01em;
-    }
-
-    .article-body {
-      font-size: 12.5px;
-      line-height: 1.55;
-      text-align: justify;
-      hyphens: auto;
-      margin: 0;
-      color: #222;
-    }
-
-    /* Footer */
-    .footer {
-      margin-top: 22px;
-      border-top: 3px double #1a1a1a;
-      padding-top: 14px;
-      text-align: center;
-      font-size: 11px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      font-weight: 600;
-    }
-
-    /* Responsive */
-    @media (max-width: 1024px) {
-      .newspaper-cols {
-        column-count: 2;
-      }
-      .paper {
-        padding: 20px 18px 18px;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .page-wrap {
-        padding: 12px 10px 28px;
-      }
-      .newspaper-cols {
-        column-count: 1;
-        column-rule: none;
-      }
-      .hero-box {
-        padding: 14px 12px 12px;
-      }
-      .masthead-title {
-        font-size: 34px;
-      }
-    }
-  </style>
+  @media(max-width:900px){.paper{grid-template-columns:1fr 1fr}.mast h1{font-size:46px}header{flex-direction:column;gap:12px}}
+  @media(max-width:600px){.paper{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
-  <div class="page-wrap">
-    <div class="paper">
 
-      <!-- MASTHEAD -->
-      <header class="masthead">
-        <div class="masthead-kicker">In Ruins</div>
-        <h1 class="masthead-title">Camino de Santiago Times</h1>
-        <div class="masthead-sub">Vol IV - Pamplona • The Way • 900KM</div>
-      </header>
+<header>
+  <a href="../../index.html" class="logo">IN RUINS</a>
+  <nav>
+    <a href="../../travel.html">Travel</a>
+    <a href="../../history.html">History</a>
+    <a href="../../photographs.html">Photos</a>
+    <a href="../../fieldnotes.html">Field Notes</a>
+    <a href="../../backporch.html">Back Porch</a>
+    <a href="../../ride.html">The Ride</a>
+  </nav>
+</header>
 
-      <!-- HERO - FULL WIDTH -->
-      <section class="hero-box">
-        <!-- TITLE FOR PAMPLONA RAIN STORY - YOU SAID: walking in rain all day to Pamplona trading 500 usd outfit for 3 euro parka and kind shopkeeper who helped allowing to change and calling to book room -->
-        <h2 class="hero-headline">
-          TITLE HERE - Pamplona Rain Story
-        </h2>
+<div class="wrap">
 
-        <p class="hero-subhed">
-          Your description here: walking in the rain all day to Pamplona trading in my 500 usd waterproof outfit for a 3 euro parka and the kind shopkeeper who helped me so much allowing me to change and calling to book a room for me.
-        </p>
+  <div class="mast">
+    <h1>CAMINO</h1>
+    <div class="sub"><span>Camino de Santiago</span><span>Pamplona • 900km</span><span>Vol. IV / No. 01</span></div>
+  </div>
 
-        <div class="photo-placeholder photo-hero">
-          DROP HERO PHOTO - PAMPLONA
-        </div>
+  <div class="paper">
 
-        <p class="hero-body">
-          Your 2-3 paragraph hook goes here. Keep it your own words, no invented details.
-        </p>
+    <!-- COLUMN 1: HERO STORY -->
+    <div class="story">
+      <div class="kicker">Pamplona</div>
+      <h2>Pamplona Rain Story</h2>
+      <div class="placeholder" style="height:200px">DROP HERO PHOTO HERE — PAMPLONA</div>
+      <p>walking in the rain all day to Pamplona trading in my 500 usd waterproof outfit for a 3 euro parka and the kind shopkeeper...</p>
+    </div>
 
-        <p class="hero-body">
-          Your second paragraph hook goes here. This is a placeholder so you can paste your real story.
-        </p>
+    <!-- COLUMN 2 -->
+    <div style="display:grid;gap:14px;">
 
-        <a class="continued" href="pamplona-rain.html">
-          Continued → Pamplona Rain
-        </a>
-      </section>
-
-      <!-- GRID - 6 BLOCKS - EXACT USER TOPICS ONLY -->
-      <div class="newspaper-cols">
-
-        <!-- 1 - GEAR -->
-        <article class="article-block">
-          <div class="kicker">Gear</div>
-          <h3 class="article-head">BLANK TITLE - Gear</h3>
-          <div class="photo-placeholder photo-tiny">DROP PHOTO - Gear</div>
-          <p class="article-body">
-            Your gear story goes here. Your own words only.
-          </p>
-          <a class="continued" href="gear.html">Continued → Gear</a>
-        </article>
-
-        <!-- 2 - FOOD -->
-        <article class="article-block">
-          <div class="kicker">Food</div>
-          <h3 class="article-head">BLANK TITLE - Food</h3>
-          <div class="photo-placeholder photo-tiny">DROP PHOTO - Food</div>
-          <p class="article-body">
-            Your food story goes here. Your own words only.
-          </p>
-          <a class="continued" href="food.html">Continued → Food</a>
-        </article>
-
-        <!-- 3 - FAVORITE STOPS -->
-        <article class="article-block">
-          <div class="kicker">Favorite Stops</div>
-          <h3 class="article-head">BLANK TITLE - Favorite Stops</h3>
-          <div class="photo-placeholder photo-tiny">DROP PHOTO - Favorite Stops</div>
-          <p class="article-body">
-            Your favorite stops story goes here. Your own words only.
-          </p>
-          <a class="continued" href="favorite-stops.html">Continued → Favorite Stops</a>
-        </article>
-
-        <!-- 4 - COOL PEOPLE -->
-        <article class="article-block">
-          <div class="kicker">Cool People</div>
-          <h3 class="article-head">BLANK TITLE - Cool People</h3>
-          <div class="photo-placeholder photo-tiny">DROP PHOTO - Cool People</div>
-          <p class="article-body">
-            Your cool people story goes here. Your own words only.
-          </p>
-          <a class="continued" href="cool-people.html">Continued → Cool People</a>
-        </article>
-
-        <!-- 5 - LITTLE MIRACLE -->
-        <article class="article-block">
-          <div class="kicker">Little Miracle</div>
-          <h3 class="article-head">BLANK TITLE - Little Miracle</h3>
-          <div class="photo-placeholder photo-tiny">DROP PHOTO - Little Miracle</div>
-          <p class="article-body">
-            Your little miracle story goes here. Your own words only.
-          </p>
-          <a class="continued" href="little-miracle.html">Continued → Little Miracle</a>
-        </article>
-
-        <!-- 6 - THE WAY PUB CRAWL -->
-        <article class="article-block">
-          <div class="kicker">The Way • Pub Crawl</div>
-          <h3 class="article-head">BLANK TITLE - The Way - ultimate pub crawl 900km wine and cheese</h3>
-          <div class="photo-placeholder photo-tiny">DROP PHOTO - Wine and Cheese</div>
-          <p class="article-body">
-            Your story goes here: you said "the ultimate pub crawl 900km of the best wine and cheese anyone could dream of" - keep your own wording.
-          </p>
-          <a class="continued" href="the-way.html">Continued → The Way</a>
-        </article>
-
+      <div class="story">
+        <div class="kicker">Gear</div>
+        <h2 style="font-size:22px;">ENTER TITLE HERE — Gear</h2>
+        <div class="placeholder" style="height:130px">DROP PHOTO HERE</div>
+        <a class="continued" href="gear.html">Continued →</a>
       </div>
 
-      <!-- FOOTER -->
-      <footer class="footer">
-        In Ruins - Camino de Santiago Times
-      </footer>
+      <div class="story">
+        <div class="kicker">Food</div>
+        <h2 style="font-size:22px;">ENTER TITLE HERE — Food</h2>
+        <div class="placeholder" style="height:130px">DROP PHOTO HERE</div>
+        <a class="continued" href="food.html">Continued →</a>
+      </div>
 
     </div>
+
+    <!-- COLUMN 3 -->
+    <div style="display:grid;gap:14px;">
+
+      <div class="story">
+        <div class="kicker">Favorite Stops</div>
+        <h2 style="font-size:22px;">ENTER TITLE HERE</h2>
+        <div class="placeholder" style="height:130px">DROP PHOTO HERE</div>
+        <a class="continued" href="favorite-stops.html">Continued →</a>
+      </div>
+
+      <div class="story">
+        <div class="kicker">Next Page</div>
+        <h3 style="font-size:16px;">To Be Continued</h3>
+        <p>More miles, more stories. This page will grow.</p>
+      </div>
+
+    </div>
+
   </div>
+</div>
+
+<footer>IN RUINS — CAMINO</footer>
 </body>
 </html>
-
