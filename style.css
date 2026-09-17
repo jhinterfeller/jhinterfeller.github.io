@@ -1,4 +1,3 @@
-
 :root{
   --paper:#eee7d2;
   --paper2:#e3dac0;
@@ -42,7 +41,16 @@ h1,h2,h3{line-height:1.05;margin:0 0 18px}
 .section-head h2{font-size:clamp(2rem,4vw,3.6rem);font-weight:500}
 .section-head p{max-width:520px;color:var(--muted);margin:0}
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.card{border:1px solid var(--line);background:rgba(255,255,255,.18);min-height:270px;padding:28px;display:flex;flex-direction:column;justify-content:space-between;transition:.2s;box-shadow:0 1px 0 rgba(255,255,255,.3) inset}
+
+/* --- SAFE FIX FOR CARD IMAGES --- */
+.card img {
+  width: 100%;
+  height: 261px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.card {border:1px solid var(--line);background:rgba(255,255,255,.18);min-height:270px;padding:28px;display:flex;flex-direction:column;justify-content:space-between;transition:.2s;box-shadow:0 1px 0 rgba(255,255,255,.3) inset}
 .card:hover{transform:translateY(-4px);background:rgba(255,255,255,.38);box-shadow:var(--shadow)}
 .card .num{font-family:Arial,Helvetica,sans-serif;font-size:.7rem;letter-spacing:.16em;color:var(--rust)}
 .card h3{font-size:2rem;font-weight:500}
@@ -85,6 +93,7 @@ footer{background:var(--forest2);color:#cfcbbd;padding:45px 24px;margin-top:50px
 .footer-inner{max-width:1180px;margin:auto;display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
 .footer-brand{color:white;font-family:Arial,sans-serif;font-weight:800;letter-spacing:.2em}
 .small{font-family:Arial,sans-serif;font-size:.72rem;letter-spacing:.08em;color:#aaa89d}
+
 @media(max-width:850px){
  .nav{align-items:flex-start;gap:15px;flex-direction:column}.navlinks{gap:12px}
  .hero,.feature,.work{grid-template-columns:1fr}.hero-photo{min-height:52vh}.hero-copy{padding:70px 28px}
@@ -92,24 +101,22 @@ footer{background:var(--forest2);color:#cfcbbd;padding:45px 24px;margin-top:50px
  .section{padding:58px 0}.wrap{padding:0 18px}
  .feature-image{min-height:380px}
 }
+
 section.quote {
   padding: 40px 20px;
   text-align: center;
 }
-
 section.quote .wrap {
   max-width: 800px;
   margin: 0 auto;
 }
-
 section.quote blockquote {
-  font-size: 19px;      /* knocks it down from huge */
+  font-size: 19px;
   line-height: 1.6;
   font-style: italic;
   margin: 0 0 15px 0;
   font-weight: 400;
 }
-
 section.quote cite,
 section.quote .author {
   display: block;
@@ -120,6 +127,7 @@ section.quote .author {
   margin-top: 10px;
   font-style: normal;
 }
+
 .universes {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -148,16 +156,15 @@ section.quote .author {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.4); /* dark overlay so text reads */
+  background: rgba(0,0,0,0.4);
 }
 .universe span {
   position: relative;
   z-index: 1;
 }
-/* Tiny work link by ROAM */
+
 .footer-tiny {
   text-align: right;
-  
   font-size: 11px;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -165,29 +172,3 @@ section.quote .author {
   margin-top: 60px;
 }
 .footer-tiny a { text-decoration: none; color: inherit; }
-
-
-/* --- MOBILE RESPONSIVE TWEAKS --- */
-@media screen and (max-width:768px) {
-  /* 1. Aligns the main site header grid container cleanly on mobile */
-  .site-header {
-    padding-left: 20px !important;
-    padding-right: 20px !important;
-  }
-
-  /* 2. Controls your specific brand class so it scales down on narrow screens */
-  .brand, .brand h1, h1 {
-    font-size: clamp(1.8rem, 6vw, 3rem) !important;
-    letter-spacing: 0.02em !important;
-  }
-
-  /* 3. Ensures your navigation link block wraps tightly instead of overflowing */
-  nav, .navlinks {
-    gap: 12px !important;
-  }
-}
-.card::after { display: none; }
-.card { filter: none !important; }
-  /* clear-card = natural photo, no dark wash - use for any card you want bright */
-  .card.clear-card img{opacity:1}
-  .card.clear-card::after{background:none;}
