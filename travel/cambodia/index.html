@@ -1,304 +1,127 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CAMBODIA TIMES — IN RUINS Vol V</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CAMBODIA — IN RUINS</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#E8E0C9;color:#1a1a1a;font-family:Georgia,"Times New Roman",Times,serif}
+  a{color:inherit;text-decoration:none}
 
-    html, body {
-      margin: 0;
-      padding: 0;
-    }
+  header{
+    max-width:1300px;
+    margin:0 auto;
+    padding:24px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid rgba(0,0,0,.15);
+  }
+  header .logo{font-family:Georgia,serif;font-weight:700;font-size:22px;letter-spacing:.08em}
+  header nav{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  header nav a{font-size:11px;letter-spacing:.18em;text-transform:uppercase;margin-left:24px;opacity:.6}
+  header nav a:hover{opacity:1}
 
-    body {
-      background: #E8E0C9;
-      color: #1a1a1a;
-      font-family: 'Inter', sans-serif;
-      -webkit-font-smoothing: antialiased;
-      padding: 22px;
-    }
+  .wrap{max-width:1300px;margin:0 auto;padding:18px 14px 60px}
 
-    .paper {
-      background: #fdfcf6;
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 32px 36px 28px 36px;
-      box-shadow: 0 1px 6px rgba(26,26,26,0.08), 0 0 0 1px rgba(26,26,26,0.04) inset;
-    }
+  .mast{border-bottom:3px double #1a1a1a;padding:10px 0 12px;margin-bottom:14px;text-align:center}
+  .mast h1{font-size:64px;line-height:.9;letter-spacing:.02em}
+  .mast .sub{display:flex;justify-content:space-between;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:10px;letter-spacing:.18em;text-transform:uppercase;margin-top:8px;border-top:1px solid #1a1a1a;padding-top:6px}
 
-    a {
-      color: #1a1a1a;
-    }
+  .paper{display:grid;grid-template-columns:1.15fr .9fr .9fr;gap:14px;align-items:start}
+  .story{background:#fdfcf6;border:1.5px solid #1a1a1a;padding:14px 14px 12px}
+  .story h2{font-size:28px;line-height:.95;margin:6px 0 8px}
+  .kicker{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:9px;letter-spacing:.2em;text-transform:uppercase;font-weight:600}
+  .story p{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:13px;line-height:1.45;margin-bottom:8px}
+  .story img{width:100%;display:block;border:1px solid #1a1a1a;margin:8px 0 8px}
+  .placeholder{
+    border:1.5px dashed #1a1a1a;
+    background:rgba(232,224,201,.45);
+    display:flex;align-items:center;justify-content:center;
+    text-align:center;padding:20px 10px;margin:8px 0;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  }
+  .continued{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;border-bottom:1px solid #1a1a1a;display:inline-block}
 
-    .masthead {
-      text-align: center;
-      border-bottom: 2px solid #1a1a1a;
-      padding-bottom: 18px;
-      margin-bottom: 22px;
-    }
+  footer{max-width:1300px;margin:0 auto;padding:14px 20px;border-top:2px solid #1a1a1a;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:10px;letter-spacing:.14em;text-transform:uppercase;opacity:.6}
 
-    .masthead-in-ruins {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 56px;
-      font-weight: 700;
-      line-height: 0.9;
-      letter-spacing: 0.02em;
-    }
-
-    .masthead-cambodia {
-      font-size: 11px;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      margin-top: 10px;
-    }
-
-    .masthead-vol {
-      font-size: 9px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      opacity: 0.65;
-      margin-top: 7px;
-    }
-
-    .hero {
-      border-bottom: 1px solid rgba(26,26,26,0.12);
-      padding-bottom: 22px;
-      margin-bottom: 22px;
-    }
-
-    .hero h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 38px;
-      line-height: 0.95;
-      font-weight: 700;
-      margin: 0 0 10px 0;
-      letter-spacing: -0.01em;
-    }
-
-    .hero-sub {
-      font-size: 13px;
-      line-height: 1.5;
-      opacity: 0.75;
-      max-width: 62ch;
-      margin: 0 0 14px 0;
-    }
-
-    .photo-box {
-      border: 1px dashed rgba(26,26,26,0.28);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 9px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      opacity: 0.5;
-      background: rgba(232,224,201,0.35);
-    }
-
-    .photo-box.hero-photo {
-      height: 146px;
-      margin-bottom: 14px;
-    }
-
-    .photo-box.small-photo {
-      height: 110px;
-      margin-bottom: 10px;
-    }
-
-    .continued {
-      font-size: 10px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      text-decoration: none;
-      color: #1a1a1a;
-      border-bottom: 1px solid #1a1a1a;
-      padding-bottom: 1px;
-    }
-
-    .hook-text {
-      font-size: 12.5px;
-      line-height: 1.65;
-      text-align: justify;
-      margin: 0 0 12px 0;
-    }
-
-    .newspaper-cols {
-      column-count: 4;
-      column-gap: 28px;
-    }
-
-    .article-block {
-      break-inside: avoid;
-      margin-bottom: 24px;
-      padding-bottom: 20px;
-      border-bottom: 1px solid rgba(26,26,26,0.12);
-    }
-
-    .kicker {
-      font-size: 10px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      opacity: 0.6;
-      margin-bottom: 6px;
-    }
-
-    .article-block h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 19px;
-      line-height: 1.15;
-      font-weight: 700;
-      margin: 0 0 10px 0;
-    }
-
-    .article-body {
-      font-size: 12.5px;
-      line-height: 1.6;
-      text-align: justify;
-      margin: 0 0 10px 0;
-    }
-
-    .footer {
-      margin-top: 28px;
-      padding-top: 16px;
-      border-top: 2px solid #1a1a1a;
-      text-align: center;
-      font-size: 9px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      opacity: 0.6;
-    }
-
-    @media (max-width: 1100px) {
-      .newspaper-cols {
-        column-count: 3;
-      }
-    }
-
-    @media (max-width: 800px) {
-      body {
-        padding: 12px;
-      }
-
-      .paper {
-        padding: 22px 20px 20px 20px;
-      }
-
-      .newspaper-cols {
-        column-count: 2;
-      }
-
-      .masthead-in-ruins {
-        font-size: 42px;
-      }
-
-      .hero h1 {
-        font-size: 30px;
-      }
-    }
-
-    @media (max-width: 520px) {
-      .newspaper-cols {
-        column-count: 1;
-      }
-    }
-  </style>
+  @media(max-width:900px){.paper{grid-template-columns:1fr 1fr}.mast h1{font-size:46px}header{flex-direction:column;gap:12px}}
+  @media(max-width:600px){.paper{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
+
+<header>
+  <a href="../../index.html" class="logo">IN RUINS</a>
+  <nav>
+    <a href="../../travel.html">Travel</a>
+    <a href="../../history.html">History</a>
+    <a href="../../photographs.html">Photos</a>
+    <a href="../../fieldnotes.html">Field Notes</a>
+    <a href="../../backporch.html">Back Porch</a>
+    <a href="../../ride.html">The Ride</a>
+  </nav>
+</header>
+
+<div class="wrap">
+
+  <div class="mast">
+    <h1>CAMBODIA</h1>
+    <div class="sub"><span>Angkor • Phnom Chisor • Khmer Sites</span><span>Heritage and Hospitality</span><span>Vol. V / No. 01</span></div>
+  </div>
+
   <div class="paper">
-    <div style="font-size:9px; letter-spacing:.18em; text-transform:uppercase; opacity:.6; padding-bottom:10px; margin-bottom:12px; border-bottom:1px solid rgba(26,26,26,.12); display:flex; gap:14px; flex-wrap:wrap;">
-      <a href="/" style="color:#1a1a1a; text-decoration:none;">Main →</a>
-      <a href="/travel/" style="color:#1a1a1a; text-decoration:none;">Travel Hub →</a>
+
+    <!-- COLUMN 1: HERO STORY -->
+    <div class="story">
+      <div class="kicker">Cambodia</div>
+      <h2>Heritage, Hospitality And People</h2>
+      <div class="placeholder" style="height:200px">DROP HERO PHOTO HERE</div>
+      <p>ENTER YOUR OPENING PARAGRAPH HERE</p>
     </div>
 
-    <header class="masthead">
-      <div class="masthead-in-ruins">IN RUINS</div>
-      <div class="masthead-cambodia">CAMBODIA TIMES</div>
-      <div class="masthead-vol">VOL V - HERITAGE • HOSPITALITY • PEOPLE</div>
-    </header>
+    <!-- COLUMN 2 -->
+    <div style="display:grid;gap:14px;">
 
-    <section class="hero">
-      <h1>HERITAGE, HOSPITALITY AND THE PEOPLE WHO CARRY IT</h1>
-      <p class="hero-sub">
-        A respectful, slow look at what remains, who welcomes with care, and how stories are carried forward by community.
-      </p>
-      <div class="photo-box hero-photo">DROP HERO PHOTO</div>
-      <p class="hook-text">
-        Your 2-3 paragraph hook goes here. Keep it blank and respectful, ready for your own opening. No invented stories, no politics — just space for a quiet, grounded introduction to this collection.
-      </p>
-      <a class="continued" href="heritage-hospitality.html">Continued →</a>
-    </section>
-
-    <main class="newspaper-cols">
-      <article class="article-block">
-        <div class="kicker">AN AWKWARD DAY</div>
-        <h2>BLANK TITLE</h2>
-        <div class="photo-box small-photo">An awkward day</div>
-        <p class="article-body">
-          Your 2-3 paragraph placeholder goes here. Keep tone respectful and blank, ready for your own words. No invented stories.
-        </p>
+      <div class="story">
+        <div class="kicker">Awkward Day</div>
+        <h2 style="font-size:22px;">ENTER TITLE HERE</h2>
+        <div class="placeholder" style="height:130px">DROP PHOTO HERE</div>
         <a class="continued" href="awkward-day.html">Continued →</a>
-      </article>
+      </div>
 
-      <article class="article-block">
-        <div class="kicker">CAMBODIA HOSPITALITY</div>
-        <h2>BLANK TITLE</h2>
-        <div class="photo-box small-photo">Cambodia hospitality</div>
-        <p class="article-body">
-          Your 2-3 paragraph placeholder goes here. Space for hospitality, welcome, and care — written in your own voice.
-        </p>
+      <div class="story">
+        <div class="kicker">Hospitality</div>
+        <h2 style="font-size:22px;">ENTER TITLE HERE</h2>
+        <div class="placeholder" style="height:130px">DROP PHOTO HERE</div>
         <a class="continued" href="hospitality.html">Continued →</a>
-      </article>
+      </div>
 
-      <article class="article-block">
-        <div class="kicker">RECREATING THE BROKEN LINK</div>
-        <h2>BLANK TITLE</h2>
-        <div class="photo-box small-photo">Broken link</div>
-        <p class="article-body">
-          Your 2-3 paragraph placeholder goes here. Blank and open for your reflection on repair, return, and continuity.
-        </p>
-        <a class="continued" href="broken-link.html">Continued →</a>
-      </article>
+    </div>
 
-      <article class="article-block">
-        <div class="kicker">HERITAGE SITES</div>
-        <h2>BLANK TITLE</h2>
-        <div class="photo-box small-photo">Heritage sites</div>
-        <p class="article-body">
-          Your 2-3 paragraph placeholder goes here. Keep it respectful, grounded, and free of politics — ready for your own notes.
-        </p>
+    <!-- COLUMN 3 -->
+    <div style="display:grid;gap:14px;">
+
+      <div class="story">
+        <div class="kicker">Heritage Sites</div>
+        <h2 style="font-size:22px;">ENTER TITLE HERE</h2>
+        <div class="placeholder" style="height:130px">DROP PHOTO HERE</div>
         <a class="continued" href="heritage-sites.html">Continued →</a>
-      </article>
+      </div>
 
-      <article class="article-block">
-        <div class="kicker">THE PEOPLE</div>
-        <h2>BLANK TITLE</h2>
-        <div class="photo-box small-photo">People</div>
-        <p class="article-body">
-          Your 2-3 paragraph placeholder goes here. Blank space for the people who carry heritage and hospitality forward.
-        </p>
-        <a class="continued" href="people.html">Continued →</a>
-      </article>
+      <div class="story">
+        <div class="kicker">Next Page</div>
+        <h3 style="font-size:16px;">To Be Continued</h3>
+        <p>More sites, more stories. This page will grow.</p>
+      </div>
 
-      <article class="article-block">
-        <div class="kicker">FIELD NOTES • RETURN</div>
-        <h2>BLANK TITLE</h2>
-        <div class="photo-box small-photo">Field notes</div>
-        <p class="article-body">
-          Your 2-3 paragraph placeholder goes here. Notes on returning with care — blank, respectful, ready to edit.
-        </p>
-        <a class="continued" href="field-notes.html">Continued →</a>
-      </article>
-    </main>
+    </div>
 
-    <footer class="footer">
-      IN RUINS - CAMBODIA TIMES
-    </footer>
   </div>
+</div>
+
+<footer>IN RUINS — CAMBODIA</footer>
 </body>
 </html>
