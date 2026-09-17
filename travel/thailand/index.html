@@ -1,105 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>THAILAND TIMES</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>THAILAND — IN RUINS</title>
 <style>
-  body{background:#E8E0C9;margin:0;padding:20px;font-family: Georgia, serif;color:#1a1a1a;}
-  .paper{max-width:1100px;margin:0 auto;background:#fdfcf6;padding:28px 28px 40px;border:1px solid #d6cfb8;}
-  .eyebrow{font-size:9px;letter-spacing:.18em;text-transform:uppercase;opacity:.6;padding-bottom:10px;margin-bottom:12px;border-bottom:1px solid rgba(0,0,0,.12);display:flex;gap:14px;flex-wrap:wrap;font-family: Arial, sans-serif;}
-  .eyebrow a{color:#1a1a1a;text-decoration:none;}
-  .mast{text-align:center;font-size:32px;letter-spacing:.22em;margin:12px 0 6px;}
-  .vol{display:flex;justify-content:space-between;font-size:11px;letter-spacing:.12em;text-transform:uppercase;border-top:3px solid #1a1a1a;border-bottom:3px solid #1a1a1a;padding:8px 0;margin-bottom:18px;font-family: Arial, sans-serif;}
-  .hero{border:1px solid #1a1a1a;padding:18px;margin-bottom:22px;}
-  .hero h1{font-size:34px;margin:0 0 8px;line-height:1.1;}
-  .hero p{font-size:13px;line-height:1.5;text-align:justify;margin:0 0 8px;}
-  .hook{width:100%;height:150px;border:1px dashed #999;display:flex;align-items:center;justify-content:center;font-size:11px;font-family: Arial, sans-serif;opacity:.6;margin:10px 0;}
-  .cols{column-count:4;column-gap:28px;column-rule:1px solid rgba(0,0,0,.12);}
-  @media(max-width:900px){.cols{column-count:2}}
-  @media(max-width:600px){.cols{column-count:1}}
-  .story{break-inside:avoid;margin-bottom:22px;border-bottom:1px solid rgba(0,0,0,.12);padding-bottom:14px;}
-  .kicker{font-size:10px;letter-spacing:.15em;text-transform:uppercase;opacity:.6;font-family: Arial, sans-serif;margin-bottom:4px;}
-  .head{font-size:19px;margin:0 0 6px;line-height:1.15;}
-  .body{font-size:12.5px;line-height:1.5;text-align:justify;margin:0 0 6px;}
-  .cont{font-size:10px;text-transform:uppercase;letter-spacing:.12em;font-family: Arial, sans-serif;}
-  .cont a{color:#1a1a1a;text-decoration:none;border-bottom:1px solid #1a1a1a;}
-  .footer{margin-top:30px;border-top:3px solid #1a1a1a;padding-top:10px;text-align:center;font-size:10px;letter-spacing:.18em;text-transform:uppercase;opacity:.6;font-family: Arial, sans-serif;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#E8E0C9;color:#1a1a1a;font-family:Georgia,"Times New Roman",Times,serif}
+  a{color:inherit;text-decoration:none}
+
+  header{
+    max-width:1300px;
+    margin:0 auto;
+    padding:24px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid rgba(0,0,0,.15);
+  }
+  header .logo{font-family:Georgia,serif;font-weight:700;font-size:22px;letter-spacing:.08em}
+  header nav{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  header nav a{font-size:11px;letter-spacing:.18em;text-transform:uppercase;margin-left:24px;opacity:.6}
+  header nav a:hover{opacity:1}
+
+  .wrap{max-width:1300px;margin:0 auto;padding:18px 14px 60px}
+
+  .mast{border-bottom:3px double #1a1a1a;padding:10px 0 12px;margin-bottom:14px;text-align:center}
+  .mast h1{font-size:64px;line-height:.9;letter-spacing:.02em}
+  .mast .sub{display:flex;justify-content:space-between;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:10px;letter-spacing:.18em;text-transform:uppercase;margin-top:8px;border-top:1px solid #1a1a1a;padding-top:6px}
+
+  .paper{display:grid;grid-template-columns:1.15fr .9fr .9fr;gap:14px;align-items:start}
+  .story{background:#fdfcf6;border:1.5px solid #1a1a1a;padding:14px 14px 12px}
+  .story h2{font-size:28px;line-height:.95;margin:6px 0 8px}
+  .kicker{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:9px;letter-spacing:.2em;text-transform:uppercase;font-weight:600}
+  .story p{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:13px;line-height:1.45;margin-bottom:8px}
+  .story img{width:100%;display:block;border:1px solid #1a1a1a;margin:8px 0 8px}
+  .placeholder{
+    border:1.5px dashed #1a1a1a;
+    background:rgba(232,224,201,.45);
+    display:flex;align-items:center;justify-content:center;
+    text-align:center;padding:20px 10px;margin:8px 0;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  }
+  .continued{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;border-bottom:1px solid #1a1a1a;display:inline-block}
+
+  footer{max-width:1300px;margin:0 auto;padding:14px 20px;border-top:2px solid #1a1a1a;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:10px;letter-spacing:.14em;text-transform:uppercase;opacity:.6}
+
+  @media(max-width:900px){.paper{grid-template-columns:1fr 1fr}.mast h1{font-size:46px}header{flex-direction:column;gap:12px}}
+  @media(max-width:600px){.paper{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<div class="paper">
 
-<div class="eyebrow">
-  <a href="/">Main →</a>
-  <a href="travel">Travel Hub →</a>
-  <a href="/travel/china/">China</a>
-  <a href="/travel/usa/">USA</a>
-  <a href="/travel/cambodia/">Cambodia</a>
+<header>
+  <a href="../../index.html" class="logo">IN RUINS</a>
+  <nav>
+    <a href="../../travel.html">Travel</a>
+    <a href="../../history.html">History</a>
+    <a href="../../photographs.html">Photos</a>
+    <a href="../../fieldnotes.html">Field Notes</a>
+    <a href="../../backporch.html">Back Porch</a>
+    <a href="../../ride.html">The Ride</a>
+  </nav>
+</header>
+
+<div class="wrap">
+
+  <div class="mast">
+    <h1>THAILAND</h1>
+    <div class="sub"><span>Khukhan • Temples • People</span><span>Land of Smiles</span><span>Vol. IV / No. 01</span></div>
+  </div>
+
+  <div class="paper">
+
+    <!-- COLUMN 1: HERO STORY -->
+    <div class="story">
+      <div class="kicker">Thailand</div>
+      <h2>ENTER MAIN HEADLINE HERE</h2>
+      <div class="placeholder" style="height:200px">DROP HERO PHOTO HERE</div>
+      <p>ENTER YOUR OPENING PARAGRAPH HERE</p>
+    </div>
+
+    <!-- COLUMN 2 -->
+    <div style="display:grid;gap:14px;">
+
+      <div class="story">
+        <div class="kicker">Hospitality</div>
+        <h2 style="font-size:22px;">ENTER TITLE HERE</h2>
+        <div class="placeholder" style="height:130px">DROP PHOTO HERE</div>
+        <a class="continued" href="hospitality.html">Continued →</a>
+      </div>
+
+      <div class="story">
+        <div class="kicker">Food</div>
+        <h2 style="font-size:22px;">ENTER TITLE HERE</h2>
+        <div class="placeholder" style="height:130px">DROP PHOTO HERE</div>
+        <a class="continued" href="food.html">Continued →</a>
+      </div>
+
+    </div>
+
+    <!-- COLUMN 3 -->
+    <div style="display:grid;gap:14px;">
+
+      <div class="story">
+        <div class="kicker">People</div>
+        <h2 style="font-size:22px;">ENTER TITLE HERE</h2>
+        <div class="placeholder" style="height:130px">DROP PHOTO HERE</div>
+        <a class="continued" href="people.html">Continued →</a>
+      </div>
+
+      <div class="story">
+        <div class="kicker">Temples</div>
+        <h2 style="font-size:22px;">ENTER TITLE HERE</h2>
+        <div class="placeholder" style="height:130px">DROP PHOTO HERE</div>
+        <a class="continued" href="temples.html">Continued →</a>
+      </div>
+
+    </div>
+
+  </div>
 </div>
 
-<div class="mast">THAILAND TIMES</div>
-<div class="vol">
-  <span>VOL. IV — THAILAND — FIELD ARCHIVE — 50 CENTS</span>
-  <span>Thailand — Field Notes</span>
-  <span>EST. 2023</span>
-</div>
-
-<div class="hero">
-  <div class="kicker">MAIN DISPATCH • PAGE ONE</div>
-  <h1>MAIN HEADLINE GOES HERE</h1>
-  <p>Your 2-3 paragraph hook goes here. Blank - you write true story.</p>
-  <div class="hook">DROP HERO PHOTO - 300x200</div>
-  <div class="cont"><a href="hospitality.html">Continued → hospitality.html</a></div>
-</div>
-
-<div class="cols">
-  <div class="story">
-    <div class="kicker">HOSPITALITY</div>
-    <div class="head">BLANK TITLE - Hospitality</div>
-    <div class="hook">DROP PHOTO</div>
-    <div class="body">Your story goes here...</div>
-    <div class="cont"><a href="hospitality.html">Continued →</a></div>
-  </div>
-  <div class="story">
-    <div class="kicker">FOOD</div>
-    <div class="head">BLANK TITLE - Food</div>
-    <div class="hook">DROP PHOTO</div>
-    <div class="body">Your story goes here...</div>
-    <div class="cont"><a href="food.html">Continued →</a></div>
-  </div>
-  <div class="story">
-    <div class="kicker">PEOPLE</div>
-    <div class="head">BLANK TITLE - People</div>
-    <div class="hook">DROP PHOTO</div>
-    <div class="body">Your story goes here...</div>
-    <div class="cont"><a href="people.html">Continued →</a></div>
-  </div>
-  <div class="story">
-    <div class="kicker">TEMPLES</div>
-    <div class="head">BLANK TITLE - Temples</div>
-    <div class="hook">DROP PHOTO</div>
-    <div class="body">Your story goes here...</div>
-    <div class="cont"><a href="temples.html">Continued →</a></div>
-  </div>
-  <div class="story">
-    <div class="kicker">FIELD NOTES</div>
-    <div class="head">BLANK TITLE - Field Notes</div>
-    <div class="hook">DROP PHOTO</div>
-    <div class="body">Your story goes here...</div>
-    <div class="cont"><a href="field-notes.html">Continued →</a></div>
-  </div>
-  <div class="story">
-    <div class="kicker">RETURN</div>
-    <div class="head">BLANK TITLE - Return</div>
-    <div class="hook">DROP PHOTO</div>
-    <div class="body">Your story goes here...</div>
-    <div class="cont"><a href="return.html">Continued →</a></div>
-  </div>
-</div>
-
-<div class="footer">IN RUINS — THAILAND TIMES</div>
-
-</div>
+<footer>IN RUINS — THAILAND</footer>
 </body>
 </html>
