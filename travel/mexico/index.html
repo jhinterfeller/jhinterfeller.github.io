@@ -8,8 +8,8 @@
   *{box-sizing:border-box;margin:0;padding:0}
   body{background:#E8E0C9;color:#1a1a1a;font-family:Georgia,"Times New Roman",Times,serif}
   a{color:inherit;text-decoration:none}
-
-  /* TOP NAV — same as every other page on the site */
+  
+  /* FUNCTIONAL TOP RAIL */
   header{
     max-width:1300px;
     margin:0 auto;
@@ -39,25 +39,66 @@
   header nav a:hover{opacity:1}
 
   .wrap{max-width:1300px;margin:0 auto;padding:18px 14px 60px}
+  
+  /* VINTAGE MASTHEAD */
+  .mast{border-bottom:4px solid #1a1a1a;padding:15px 0 12px;margin-bottom:18px;text-align:center}
+  .mast h1{font-size:clamp(45px, 8vw, 84px);line-height:.85;letter-spacing:.05em;font-weight:800;text-transform:uppercase;margin-bottom:8px;}
+  
+  /* THIS BRINGS THE SLOGAN INTO PERFECT BOX CENTER */
+  .mast h1 + span {
+    display: block;
+    font-size: 14px;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    font-style: italic;
+    opacity: 0.85;
+  }
+  
+  .mast .sub{display:flex;justify-content:space-between;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:10px;letter-spacing:.18em;text-transform:uppercase;margin-top:12px;border-top:1px solid #1a1a1a;padding-top:8px}
 
-  .mast{border-bottom:3px double #1a1a1a;padding:10px 0 12px;margin-bottom:14px;text-align:center}
-  .mast h1{font-size:64px;line-height:.9;letter-spacing:.02em}
-  .mast .sub{display:flex;justify-content:space-between;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:10px;letter-spacing:.18em;text-transform:uppercase;margin-top:8px;border-top:1px solid #1a1a1a;padding-top:6px}
+  /* NEWSPAPER FRONT-PAGE GRID */
+  .paper {
+    display: grid;
+    grid-template-columns: 1fr 1.25fr 0.75fr; /* Left rail, Main center, Right column */
+    gap: 20px;
+    align-items: start;
+  }
 
-  .paper{display:grid;grid-template-columns:1.15fr .9fr .9fr;gap:14px;align-items:start}
-  .story{background:#fdfcf6;border:1.5px solid #1a1a1a;padding:14px 14px 12px}
-  .story h2{font-size:28px;line-height:.95;margin:6px 0 8px}
-  .story h3{font-size:18px;line-height:1;margin:8px 0 6px;border-top:1px solid #1a1a1a;padding-top:8px}
-  .kicker{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:9px;letter-spacing:.2em;text-transform:uppercase;font-weight:600}
-  .story p{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:13px;line-height:1.45;margin-bottom:8px}
-  .story img{width:100%;display:block;border:1px solid #1a1a1a;margin:8px 0 8px}
-  .tiny{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:9px;letter-spacing:.14em;text-transform:uppercase;opacity:.6;margin-top:6px}
-  .continued{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;border-bottom:1px solid #1a1a1a;display:inline-block}
-
-  footer{max-width:1300px;margin:0 auto;padding:14px 20px;border-top:2px solid #1a1a1a;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:10px;letter-spacing:.14em;text-transform:uppercase;opacity:.6}
-
-  @media(max-width:900px){.paper{grid-template-columns:1fr 1fr}.mast h1{font-size:46px}header{flex-direction:column;gap:12px}}
-  @media(max-width:600px){.paper{grid-template-columns:1fr}}
+  /* VERTICAL COLUMN DIVIDERS (Like real paper print) */
+  .col-left { border-right: 1px dashed rgba(26,26,26,0.3); padding-right: 10px; display: flex; flex-direction: column; gap: 18px; }
+  .col-center { border-right: 1px dashed rgba(26,26,26,0.3); padding-right: 10px; display: flex; flex-direction: column; gap: 18px; }
+  .col-right { display: flex; flex-direction: column; gap: 18px; }
+  
+  /* STRUCTURED NEWS BLOCKS */
+  .story{background:#fdfcf6;border:1px solid #1a1a1a;padding:16px;box-shadow: 2px 2px 0px rgba(0,0,0,0.04);}
+  .story h2{font-size:26px;line-height:.95;margin:6px 0 10px;font-weight:700;letter-spacing:-0.02em;}
+  
+  /* LARGE BREAKING FEATURE HEADLINE (Spans across content) */
+  .story.lead-feature h2 { font-size: 42px; line-height: 0.9; margin-bottom: 12px; }
+  
+  .story h3{font-size:18px;line-height:1.1;margin:12px 0 8px;border-top:1px solid #1a1a1a;padding-top:10px;font-weight:700;}
+  .kicker{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:9px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:#6b5d48;}
+  
+  .story p{font-family:Georgia,"Times New Roman",Times,serif;font-size:13.5px;line-height:1.45;margin-bottom:10px;text-align:justify;color:#222;}
+  .story img{width:100%;display:block;border:1px solid #1a1a1a;margin:10px 0 6px;}
+  
+  .tiny{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:9px;letter-spacing:.12em;text-transform:uppercase;opacity:.7;margin-top:4px;margin-bottom:4px;}
+  .continued{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;border-bottom:1px solid #1a1a1a;display:inline-block;}
+  
+  footer{max-width:1300px;margin:0 auto;padding:20px;border-top:4px double #1a1a1a;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:10px;letter-spacing:.14em;text-transform:uppercase;opacity:.6}
+  
+  /* RESPONSIVE FLATTENING FOR LAPTOPS/PHONES */
+  @media(max-width:1000px){
+    .paper{grid-template-columns: 1fr 1fr;}
+    .col-left { border: none; padding: 0; }
+    .col-center { border: none; padding: 0; }
+  }
+  @media(max-width:600px){
+    .paper{grid-template-columns:1fr;}
+    header{flex-direction:column;gap:12px; text-align: center;}
+    header nav a { margin: 0 10px; display: inline-block; }
+  }
 </style>
 </head>
 <body>
@@ -75,63 +116,54 @@
 </header>
 
 <div class="wrap">
-
   <div class="mast">
     <h1>MEXICO</h1>
-    <div class="sub"><span>Yucatan — Teotihuacan — Chiapas</span><span>Cenotes and Pyramids</span><span>Vol. II / No. 01</span></div>
+    <span>Yucatan — Teotihuacan — Chiapas</span>
+    <div class="sub"><span>Cenotes and Pyramids</span><span>Vol. II / No. 01</span></div>
   </div>
 
   <div class="paper">
-
-    <!-- ============================================= -->
-    <!-- COLUMN 1: MAIN / HERO STORY                    -->
-    <!-- This is the big lead article, same spot as     -->
-    <!-- "Old Faithful" on the USA page.                -->
-    <!-- ============================================= -->
-    <div class="story">
-      <div class="kicker">Chichen Itza • Cenotes</div>
-      <h2>Cenotes, Pyramids And Hospitality</h2>
-      <a href="itza.jpg"><img src="itza.jpg" alt="Chichen Itza"></a>
-      <p>ENTER YOUR OPENING HOOK / INTRO PARAGRAPH HERE</p>
-      <p>ENTER A SECOND PARAGRAPH HERE IF YOU WANT ONE</p>
-      <div class="tiny">Fig. 01 — Chichen Itza — Photo: J Hinterfeller</div>
-      <h3>ENTER SUB-STORY TITLE HERE</h3>
-      <p>PASTE YOUR ARTICLE TEXT HERE</p>
-    </div>
-
-    <!-- ============================================= -->
-    <!-- COLUMN 2: TWO SMALLER STORIES STACKED          -->
-    <!-- ============================================= -->
-    <div style="display:grid;gap:14px;">
-
+    
+    <!-- COLUMN 1: LEFT SIDEBAR -->
+    <div class="col-left">
       <div class="story">
         <div class="kicker">Yaxunah</div>
-        <h2 style="font-size:22px;">Village Well Portal</h2>
+        <h2>Village Well Portal</h2>
         <p>ENTER SHORT INTRO PARAGRAPH HERE</p>
         <a href="cen.jpg"><img src="cen.jpg" alt="Yaxunah cenote"></a>
         <div class="tiny">Yaxunah</div>
         <a class="continued" href="yaxunah.html">Continued →</a>
       </div>
-
+      
       <div class="story">
         <div class="kicker">Bungalows</div>
-        <h2 style="font-size:22px;">Strangers Become Family</h2>
+        <h2>Strangers Become Family</h2>
         <p>ENTER SHORT INTRO PARAGRAPH HERE</p>
         <a href="bungalobkfst.jpg"><img src="bungalobkfst.jpg" alt="Bungalow breakfast"></a>
         <div class="tiny">Bungalows</div>
         <a class="continued" href="bungalows.html">Continued →</a>
       </div>
-
     </div>
 
-    <!-- ============================================= -->
-    <!-- COLUMN 3: TWO MORE SMALLER STORIES STACKED     -->
-    <!-- ============================================= -->
-    <div style="display:grid;gap:14px;">
-
+    <!-- COLUMN 2: CENTER BROAD COLUMN (Lead Feature Story) -->
+    <div class="col-center">
+      <div class="story lead-feature">
+        <div class="kicker">Chichen Itza • Cenotes</div>
+        <h2>Cenotes, Pyramids And Hospitality</h2>
+        <a href="itza.jpg"><img src="itza.jpg" alt="Chichen Itza"></a>
+        <div class="tiny">Fig. 01 — Chichen Itza — Photo: J Hinterfeller</div>
+        <p>ENTER YOUR OPENING HOOK / INTRO PARAGRAPH HERE</p>
+        <p>ENTER A SECOND PARAGRAPH HERE IF YOU WANT ONE</p>
+        <h3>ENTER SUB-STORY TITLE HERE</h3>
+        <p>PASTE YOUR ARTICLE TEXT HERE</p>
+      </div>
+    </div>
+    
+    <!-- COLUMN 3: RIGHT COLUMN -->
+    <div class="col-right">
       <div class="story">
         <div class="kicker">Teotihuacan</div>
-        <h2 style="font-size:22px;">Pilot Over Gods</h2>
+        <h2>Pilot Over Gods</h2>
         <p>ENTER SHORT INTRO PARAGRAPH HERE</p>
         <a href="espirit.jpg"><img src="espirit.jpg" alt="Balloon over Teotihuacan"></a>
         <div class="tiny">Teotihuacan</div>
@@ -140,17 +172,16 @@
 
       <div class="story">
         <div class="kicker">Medicine</div>
-        <h2 style="font-size:22px;">Medicine Man</h2>
+        <h2>Medicine Man</h2>
         <p>ENTER SHORT INTRO PARAGRAPH HERE</p>
         <!-- No photo dropped in for this one yet — swap this div for an <img> tag once you have one -->
         <div class="tiny">DROP PHOTO HERE, THEN DELETE THIS LINE</div>
         <a class="continued" href="medicine-man.html">Continued →</a>
       </div>
-
     </div>
 
-  </div>
-</div>
+  </div> <!-- End of Paper Grid -->
+</div> <!-- End of Wrap -->
 
 <footer>IN RUINS — MEXICO</footer>
 </body>
