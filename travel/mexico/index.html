@@ -34,7 +34,7 @@
     letter-spacing:.18em;
     text-transform:uppercase;
     margin-left:14px;
-    padding:8px 10px; /* Enhanced tap area for mobile without ruining desktop */
+    padding:8px 10px;
     display:inline-block;
     opacity:.75;
   }
@@ -46,7 +46,6 @@
   .mast{border-bottom:4px solid #1a1a1a;padding:15px 0 12px;margin-bottom:18px;text-align:center}
   .mast h1{font-size:clamp(45px, 8vw, 84px);line-height:.85;letter-spacing:.05em;font-weight:800;text-transform:uppercase;margin-bottom:8px;}
   
-  /* THIS BRINGS THE SLOGAN INTO PERFECT BOX CENTER */
   .mast h1 + span {
     display: block;
     font-size: 14px;
@@ -62,12 +61,12 @@
   /* NEWSPAPER FRONT-PAGE GRID */
   .paper {
     display: grid;
-    grid-template-columns: 1fr 1.25fr 0.75fr; /* Left rail, Main center, Right column */
+    grid-template-columns: 1fr 1.25fr 0.75fr;
     gap: 20px;
     align-items: start;
   }
 
-  /* VERTICAL COLUMN DIVIDERS (Like real paper print) */
+  /* VERTICAL COLUMN DIVIDERS */
   .col-left { border-right: 1px dashed rgba(26,26,26,0.3); padding-right: 10px; display: flex; flex-direction: column; gap: 18px; }
   .col-center { border-right: 1px dashed rgba(26,26,26,0.3); padding-right: 10px; display: flex; flex-direction: column; gap: 18px; }
   .col-right { display: flex; flex-direction: column; gap: 18px; }
@@ -81,11 +80,10 @@
   }
   .story h2{font-size:26px;line-height:.95;margin:6px 0 10px;font-weight:700;letter-spacing:-0.02em;}
   
-  /* LARGE BREAKING FEATURE HEADLINE (Spans across content) */
   .story.lead-feature h2 { font-size: 42px; line-height: 0.9; margin-bottom: 12px; }
   
   .story h3{font-size:18px;line-height:1.1;margin:12px 0 8px;border-top:1px solid #1a1a1a;padding-top:10px;font-weight:700;}
-  .kicker{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:9px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:#4a3f30;} /* Darkened slightly for contrast compliance */
+  .kicker{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:9px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:#4a3f30;}
   
   .story p{font-family:Georgia,"Times New Roman",Times,serif;font-size:13.5px;line-height:1.45;margin-bottom:10px;text-align:justify;color:#222;}
   .story img{width:100%;height:auto;display:block;border:1px solid #1a1a1a;margin:10px 0 6px;}
@@ -105,7 +103,7 @@
     .paper{grid-template-columns:1fr;}
     header{flex-direction:column;gap:12px; text-align: center;}
     header nav a { margin: 2px 6px; }
-    .story p { text-align: left; } /* Prevents awkward wide-spacing gaps on small screens */
+    .story p { text-align: left; }
   }
 </style>
 </head>
@@ -153,12 +151,13 @@
       </div>
     </div>
 
-    <!-- COLUMN 2: CENTER BROAD COLUMN (Lead Feature Story) -->
+    <!-- COLUMN 2: CENTER BROAD COLUMN -->
     <div class="col-center">
+      
+      <!-- ARTICLE 1 -->
       <div class="story lead-feature">
         <div class="kicker">Chichen Itza • Cenotes</div>
         <h2>Cenotes, Pyramids And Hospitality</h2>
-        <!-- High priority for main hero image to boost LCP score -->
         <a href="itza_res.webp"><img src="itza_res.webp" alt="Chichen Itza" width="800" height="500" fetchpriority="high"></a>
         <div class="tiny">Fig. 01 — Chichen Itza — Photo: J Hinterfeller</div>
         <p>ENTER YOUR OPENING HOOK / INTRO PARAGRAPH HERE</p>
@@ -166,22 +165,21 @@
         <h3>ENTER SUB-STORY TITLE HERE</h3>
         <p>PASTE YOUR ARTICLE TEXT HERE</p>
       </div>
-    </div>
- 
- <div class="col-center">
+
+      <!-- ARTICLE 2 -->
       <div class="story lead-feature">
         <div class="kicker">Museo Nacional de Antropología</div>
         <h2>One of the Best Museums in the World</h2>
-        <!-- High priority for main hero image to boost LCP score -->
-        <a href="anthro_res.webp"><img src="anthro_res.webp" alt="Museo Nacional de Antropología" width="800" height="500" fetchpriority="high"></a>
+        <a href="anthro_res.webp"><img src="anthro_res.webp" alt="Museo Nacional de Antropología" width="800" height="500" loading="lazy"></a>
         <div class="tiny">Fig. 02 — Museo Nacional de Antropología — Photo: J Hinterfeller</div>
         <p>allow your mind to drift back in time</p>
         <p>but just for a moment you don't want to end up like me</p>
         <h3>ENTER SUB-STORY TITLE HERE</h3>
         <p>PASTE YOUR ARTICLE TEXT HERE</p>
       </div>
+
     </div>
-   
+    
     <!-- COLUMN 3: RIGHT COLUMN -->
     <div class="col-right">
       <div class="story">
@@ -204,6 +202,10 @@
 
   </div> <!-- End of Paper Grid -->
 </div> <!-- End of Wrap -->
+
+<footer>IN RUINS — MEXICO</footer>
+</body>
+</html>
 
 <footer>IN RUINS — MEXICO</footer>
 </body>
