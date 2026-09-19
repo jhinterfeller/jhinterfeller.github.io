@@ -70,8 +70,13 @@
   .col-center { border-right: 1px dashed rgba(26,26,26,0.3); padding-right: 10px; display: flex; flex-direction: column; gap: 18px; }
   .col-right { display: flex; flex-direction: column; gap: 18px; }
   
-  /* STRUCUTRED NEWS BLOCKS */
-  .story{background:#fdfcf6;border:1px solid #1a1a1a;padding:16px;box-shadow: 2px 2px 0px rgba(0,0,0,0.04);}
+  /* UNBOXED VINTAGE STORY BLOCKS */
+  .story{
+    background: transparent;
+    border: none;
+    padding: 0 0 16px 0;
+    box-shadow: none;
+  }
   .story h2{font-size:26px;line-height:.95;margin:6px 0 10px;font-weight:700;letter-spacing:-0.02em;}
   
   /* LARGE BREAKING FEATURE HEADLINE (Spans across content) */
@@ -117,14 +122,13 @@
 <div class="wrap">
    <div class="mast">
     <h1>USA</h1>
-    <span>From Sea to Shining Sea</span> <!-- Pulled up to sit centered under the crown headline -->
+    <span>From Sea to Shining Sea</span>
     <div class="sub"><span>Home of the Brave — Land of the Free</span><span>Vol. I / No. 01</span></div>
   </div>
 
-  
   <div class="paper">
     
-    <!-- COLUMN 1: LEFT SIDEBAR (Slightly narrower, focus on Dispatches) -->
+    <!-- COLUMN 1: LEFT SIDEBAR -->
     <div class="col-left">
       <div class="story">
         <div class="kicker">Dispatch</div>
@@ -142,7 +146,7 @@
       </div>
     </div>
 
-    <!-- COLUMN 2: CENTER BROAD COLUMN (The main headline story) -->
+    <!-- COLUMN 2: CENTER BROAD COLUMN -->
     <div class="col-center">
       <div class="story lead-feature">
         <div class="kicker">Old Faithful • Yellowstone</div>
@@ -155,7 +159,7 @@
       </div>
     </div>
     
-    <!-- COLUMN 3: RIGHT COLUMN (List details and continuing updates) -->
+    <!-- COLUMN 3: RIGHT COLUMN -->
     <div class="col-right">
       <div class="story">
         <div class="kicker">Dispatch</div>
