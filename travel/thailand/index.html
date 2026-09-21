@@ -106,6 +106,29 @@
     header nav a { margin: 2px 6px; }
     .story p { text-align: left; }
   }
+   /* NEW ADAPTIVE IMAGE GALLERY FOR THE CENTER STORY */
+  .story-gallery {
+    display: flex;
+    gap: 15px;
+    margin: 18px 0;
+  }
+  .gallery-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .gallery-item img {
+    margin: 0 0 6px 0 !important; /* Overrides default margins to keep it crisp */
+  }
+  
+  /* Forces the gallery images to stack vertically on phones */
+  @media (max-width: 600px) {
+    .story-gallery {
+      flex-direction: column;
+      gap: 18px;
+    }
+  }
+
 </style>
 </head>
 <body>
@@ -150,11 +173,7 @@
         <div class="tiny">City of Angels</div>
         <a class="continued" href="bangkok.html">Continued →</a>
       </div>
-    </div>
-
-    <!-- COLUMN 2: CENTER BROAD COLUMN (Lead Feature Story) -->
-    <div class="col-center">
-      <div class="story lead-feature">
+     <div class="story">
         <div class="kicker">Erawan Falls</div>
         <h2>Nature</h2>
         <a href="erawan.webp"><img src="erawan.webp" alt="Erawan National Park" width="800" height="500" fetchpriority="high"></a>
@@ -165,6 +184,41 @@
         <p>PASTE YOUR ARTICLE TEXT HERE</p>
       </div>
     </div>
+
+        <!-- COLUMN 2: CENTER BROAD COLUMN (Lead Feature Story) -->
+    <div class="col-center">
+      <div class="story lead-feature">
+        <div class="kicker">Sukhothai</div>
+        <h2>The Transient ATMs of the Ancient Capital</h2>
+        
+        <!-- Your Grand Sukhothai Centerpiece Photo -->
+        <a href="suk_res.webp"><img src="suk_res.webp" alt="Sukhothai Historical Park Ancient Ruins" width="800" height="500" fetchpriority="high"></a>
+        <div class="tiny">Fig. 01 — Sukhothai Historical Park — Photo: J Hinterfeller</div>
+        
+        <p>The off-season hung heavy over Sukhothai. You could feel it in the quiet streets and the desperate edge of the local commerce. It was a sharp, sudden reminder that I was no longer in Khukhan. Back home in Khukhan, where I teach, life has a predictable, respectful rhythm; I am a known quantity, a neighbor, never a target for the expat tax. But Sukhothai is an economy built on transient atms. People who arrive from places where their money has a different value. They don’t really notice, if they do, they typically accept it with an understanding of comparison to prices back home. It is a bargain for them. They look at ruins, and leave forever. There is no incentive to give a farang local prices because there is no repeat business.</p>
+        
+        <p>I felt the friction of this at a small stationery shop. The owner rang up a notebook for one hundred baht. The printed price tag clearly read sixty. When I caught his eye, pointing at the tag with a silent, questioning look, he didn't blink. He just gave me an apathetic, slow-motion shrug that said everything: You can afford it, and what are you going to do about it anyway? It’s the minor tax of being a farang in a SE Asian tourist town, especially during slow season. You pay the price, swallow the irritation, and keep moving.</p>
+        
+        <p>The morning carried that brief, deceptive cool before the tropical heat settles in. I slept well at the Withoon Guesthouse; quiet, cheap, and run by kind women. They were helpful, but we shared little other than polite smiles and the customary, silent gestures of a language barrier. For thirty baht, barely a dollar, I rented a bicycle that felt like a rolling mechanical disaster. By the time I cleared the first intersection, the seat was sliding beneath me, the handlebars held a nervous wobble, and the brakes ground metal-on-metal every time I slowed. "Adventure," I muttered, in self-satisfied optimism, as I rattled my way out of town.</p>
+        
+        <p>I pedaled the unstable bicycle north along Route 12, cutting right onto Route 1113, and tracked over the ghost-banks of the ancient moats that once squared off the old city walls. To my right, the weathered, Khmer-style prasat of Wat Phra Phai Luang, a remnant of the empire that held this ground before the two brothers decided they had had enough with the exploitation of a distant ruler. I kept riding along the edge of the square moat, and turned left with the water. The remains of the ancient pottery kilns sat on the right.</p>
+
+        <!-- Your Side-by-Side Adaptive Kiln Gallery -->
+        <div class="story-gallery">
+          <div class="gallery-item">
+            <a href="kiln.webp"><img src="kiln.webp" alt="The ancient Thuriang pottery kilns of Sukhothai" width="400" height="300" loading="lazy"></a>
+            <div class="tiny">Fig. 02 — The Thuriang Kilns</div>
+          </div>
+          <div class="gallery-item">
+            <a href="shard.webp"><img src="shard.webp" alt="Sangkhalok pottery shards in the grass" width="400" height="300" loading="lazy"></a>
+            <div class="tiny">Fig. 03 — Sangkhalok Shards</div>
+          </div>
+        </div>
+
+        <p>Walking among the ruins of the Thuriang Kilns, the modern world and its petty financial frictions finally evaporated. Shards of discarded Sangkhalok ceramics that failed the final inspection seven centuries ago peeked up through the grass. I stood there alone, save for a solitary local man casting a fishing line into the green waters of the moat. It wasn’t long before I let my mind drift. You could almost feel the heat of the massive fires, but that was just the sun breaking the morning freshness. I imagined the children hauling river mud, and the commands of master artisans throwing pottery destined for the high markets of Imperial China. It is a spectacular, abandoned place, and easily one of the finest mornings I’ve ever spent on the road.</p>
+      </div>
+    </div>
+
     
     <!-- COLUMN 3: RIGHT COLUMN -->
     <div class="col-right">
