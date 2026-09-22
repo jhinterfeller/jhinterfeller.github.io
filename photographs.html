@@ -1,18 +1,106 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Photographs</title><link rel="stylesheet" href="style.css"></head><body>
-<header class="site-header"><nav class="nav"><a class="brand" href="index.html">Amazing Finds</a><div class="navlinks"><a href="travel.html">Travel</a><a href="history.html">History</a><a href="photographs.html">Photos</a><a href="fieldnotes.html">Field Notes</a><a href="backporch.html">Back Porch</a><a href="ride.html">Ride</a></div></nav></header>
-<section class="page-hero"><div class="wrap"><div class="kicker">03 / Photographs</div><h1>The visual archive.</h1><p>have a moment.</p></div></section>
-<section class="section"><div class="wrap"><div class="photo-grid"><figure><img src="cenote_res.webp" alt="Blue water inside a limestone cave"><figcaption>Cenote · field photograph · J. Hinterfeller</figcaption></figure><figure><img src="zzgate.webp" alt="gate with cannons"><figcaption>gate  · J. Hinterfeller</figcaption></figure>   <figure>
-  <img src="itzapnk.webp" alt="Chichen Itza at Night Yucatan Mexico">
-  <figcaption>Chichen Itza At Night</figcaption>
-</figure>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Photographs</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Ensure photos fit completely inside their cards without cropping */
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+      align-items: start;
+    }
 
-<figure>
-  <img src="Yaxuna.webp" alt="Yaxuna Mayan Ruins">
-  <figcaption>Yaxuna Maya Ruins Yucatan Mexico</figcaption>
-</figure>
+    .photo-grid figure {
+      margin: 0;
+      background: rgba(0, 0, 0, 0.03);
+      padding: 10px;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+    }
 
-<figure>
-  <img src="20241128_070719_result.jpg" alt="The Naga King Guardingthe Pearl Buddha">
-  <figcaption>The Naga King Guarding The Pearl Buddha overlooking the Mekong River Mukdahan Thailand</figcaption>
-</figure> </div><div class="rule"></div><p>As the archive grows, each photograph can connect to the story behind it.</p><a class="btn" href="photographs.html">Photography</a></div></section>
-<footer><div class="footer-inner"><div class="footer-brand">THE TRAIL</div><div class="small">What you find without a plan.</div></div></footer></body></html>
+    .photo-grid img {
+      width: 100%;
+      height: 300px;
+      object-fit: contain; /* Prevents cropping: scales image to fit inside box */
+      display: block;
+      background: #eee; /* Fills empty space if photo aspect ratio differs */
+    }
+
+    .photo-grid figcaption {
+      margin-top: 8px;
+      font-size: 0.85rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="index.html">Amazing Finds</a>
+    <div class="navlinks">
+      <a href="travel.html">Travel</a>
+      <a href="history.html">History</a>
+      <a href="photographs.html">Photos</a>
+      <a href="fieldnotes.html">Field Notes</a>
+      <a href="backporch.html">Back Porch</a>
+      <a href="ride.html">Ride</a>
+    </div>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <div class="kicker">03 / Photographs</div>
+    <h1>The visual archive.</h1>
+    <p>have a moment.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="photo-grid">
+      <figure>
+        <img src="cenote_res.webp" alt="Blue water inside a limestone cave">
+        <figcaption>Cenote · field photograph · J. Hinterfeller</figcaption>
+      </figure>
+
+      <figure>
+        <img src="zzgate.webp" alt="Gate with cannons">
+        <figcaption>Gate · J. Hinterfeller</figcaption>
+      </figure>
+
+      <figure>
+        <img src="itzapnk.webp" alt="Chichen Itza at Night Yucatan Mexico">
+        <figcaption>Chichen Itza At Night</figcaption>
+      </figure>
+
+      <figure>
+        <img src="Yaxuna.webp" alt="Yaxuna Mayan Ruins">
+        <figcaption>Yaxuna Maya Ruins Yucatan Mexico</figcaption>
+      </figure>
+
+      <figure>
+        <img src="20241128_070719_result.jpg" alt="The Naga King Guarding the Pearl Buddha">
+        <figcaption>The Naga King Guarding The Pearl Buddha overlooking the Mekong River Mukdahan Thailand</figcaption>
+      </figure>
+    </div>
+
+    <div class="rule"></div>
+    <p>As the archive grows, each photograph can connect to the story behind it.</p>
+    <a class="btn" href="photographs.html">Photography</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">THE TRAIL</div>
+    <div class="small">What you find without a plan.</div>
+  </div>
+</footer>
+
+</body>
+</html>
