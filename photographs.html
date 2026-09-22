@@ -6,33 +6,37 @@
   <title>Photographs</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* Ensure photos fit completely inside their cards without cropping */
+    /* Clean, unboxed gallery layout */
     .photo-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 24px;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 36px 24px;
       align-items: start;
     }
 
     .photo-grid figure {
       margin: 0;
-      background: rgba(0, 0, 0, 0.03);
-      padding: 10px;
-      border: 1px solid rgba(0, 0, 0, 0.1);
+      padding: 0;
+      border: none;
+      background: transparent;
     }
 
+    /* Entire photo displays naturally without cropping or background frames */
     .photo-grid img {
       width: 100%;
-      height: 300px;
-      object-fit: contain; /* Prevents cropping: scales image to fit inside box */
+      height: auto;
       display: block;
-      background: #eee; /* Fills empty space if photo aspect ratio differs */
+      border: 1px solid rgba(0, 0, 0, 0.15); /* Subtle dark border matching newspaper aesthetic */
     }
 
     .photo-grid figcaption {
-      margin-top: 8px;
-      font-size: 0.85rem;
-      text-align: center;
+      margin-top: 10px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      opacity: 0.75;
+      line-height: 1.4;
     }
   </style>
 </head>
