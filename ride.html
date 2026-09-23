@@ -1,6 +1,350 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>The Open Trail</title><link rel="stylesheet" href="style.css"></head><body>
-<header class="site-header"><nav class="nav"><a class="brand" href="index.html">THE DUSTY TRAIL</a><div class="navlinks"><a href="travel.html">Travel</a><a href="history.html">History</a><a href="photographs.html">Photos</a><a href="fieldnotes.html">Field Notes</a><a href="backporch.html">Back Porch</a><a href="ride.html">Ride</a></div></nav></header>
-<section class="page-hero"><div class="wrap"><div class="kicker">Ride</div><h1>Protect Your Eyes.</h1><p>Watch for wet leaves</p></div></section>
-<section class="section"><div class="wrap"><div class="work"><div class="workbox"><div class="kicker">look what I can do</div><h2> Build stories.</h2><p>editorial content.</p><p>the freedom</p></div><div class="formlike"><div class="kicker">Start a conversation</div><p><strong>look ahead</strong><br>take it easy.</p><p><strong>Writing / content</strong><br>slow ride.</p><p><strong>on a scooter the left is not a clutch</strong><br>slow in the snow.</p><div class="rule"></div><p class="small">on road off road.</p><a class="btn" href="mailto:jhinterfeller@gmail.com">Email me about a project</a></div></div></div></section>
-<section class="quote"><div class="wrap"><blockquote>look mom no hands</blockquote></div></section>
-<footer><div class="footer-inner"><div class="footer-brand">THE track</div><div class="small">Independence</div></div></footer></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IN RUINS — THE RIDE</title>
+<style>
+  /* RESET & EASYRIDERS COLOR PALETTE */
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  
+  body {
+    background-color: #0e0d0b;
+    color: #e5ded0;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    line-height: 1.5;
+    padding-bottom: 50px;
+  }
+
+  a { color: #f2a900; text-decoration: none; }
+  a:hover { text-decoration: underline; color: #ffcc00; }
+
+  /* NAVIGATION RAIL (Maintains consistency with main site but dark/rugged) */
+  .site-header {
+    background: #000;
+    border-bottom: 3px solid #f2a900;
+    padding: 15px 20px;
+  }
+  .nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .brand {
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    font-size: 26px;
+    letter-spacing: 2px;
+    color: #f2a900;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 0px #c00;
+  }
+  .navlinks a {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-left: 12px;
+    color: #ccc;
+    padding: 6px 10px;
+    display: inline-block;
+  }
+  .navlinks a:hover { color: #f2a900; }
+
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+
+  /* RIDE MAGAZINE MASTHEAD HERO */
+  .hero-mast {
+    background: #141310;
+    border: 4px double #f2a900;
+    margin: 25px auto;
+    padding: 30px 20px;
+    text-align: center;
+    position: relative;
+    box-shadow: inset 0 0 50px rgba(0,0,0,0.8);
+  }
+  .hero-mast .badge {
+    position: absolute;
+    top: -15px;
+    left: 20px;
+    background: #c00;
+    color: #fff;
+    font-family: 'Impact', sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    padding: 4px 12px;
+    text-transform: uppercase;
+    transform: rotate(-2deg);
+    border: 1px solid #fff;
+  }
+  .hero-mast .kicker {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 12px;
+    letter-spacing: 4px;
+    color: #f2a900;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  .hero-mast h1 {
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    font-size: clamp(48px, 9vw, 95px);
+    line-height: 0.88;
+    color: #f5f5f5;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 4px 4px 0px #c00, -2px -2px 0px #000;
+    margin-bottom: 10px;
+  }
+  .hero-mast p {
+    font-style: italic;
+    font-size: 18px;
+    color: #bbb;
+    letter-spacing: 1px;
+  }
+
+  /* TWO COLUMN MAGAZINE SPREAD */
+  .magazine-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    margin-top: 20px;
+  }
+
+  /* MAIN FEATURE ARTICLE (LEFT) */
+  .main-feature {
+    background: #12110e;
+    border: 2px solid #332d23;
+    padding: 25px;
+  }
+  .article-header {
+    border-bottom: 2px solid #f2a900;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+  }
+  .article-header h2 {
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    font-size: 38px;
+    text-transform: uppercase;
+    color: #f2a900;
+    letter-spacing: 1px;
+    line-height: 1;
+  }
+  .article-header .subtext {
+    font-family: -apple-system, sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #888;
+    margin-top: 5px;
+  }
+
+  .body-copy p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #d1c9bd;
+    text-align: justify;
+  }
+  /* Drop Cap for vintage magazine look */
+  .body-copy p::first-letter {
+    font-family: 'Impact', sans-serif;
+    font-size: 48px;
+    float: left;
+    line-height: 0.8;
+    margin-right: 8px;
+    color: #c00;
+  }
+
+  /* SIDEBAR / TECH SPECS & FIELD NOTES (RIGHT) */
+  .sidebar-box {
+    background: #181612;
+    border: 3px solid #c00;
+    padding: 20px;
+    position: relative;
+  }
+  .sidebar-box h3 {
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #fff;
+    background: #c00;
+    margin: -20px -20px 20px -20px;
+    padding: 10px;
+    text-align: center;
+    letter-spacing: 1px;
+  }
+  .spec-item {
+    border-bottom: 1px dashed #443c30;
+    padding: 10px 0;
+  }
+  .spec-item strong {
+    font-family: -apple-system, sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #f2a900;
+    display: block;
+  }
+  .spec-item span {
+    font-size: 14px;
+    color: #ccc;
+  }
+
+  /* BUTTON STYLING */
+  .btn-biker {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: #f2a900;
+    color: #000;
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 12px;
+    margin-top: 20px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 3px 3px 0px #c00;
+    transition: all 0.2s;
+  }
+  .btn-biker:hover {
+    background: #fff;
+    color: #c00;
+    box-shadow: 3px 3px 0px #f2a900;
+    text-decoration: none;
+  }
+
+  /* FULL WIDTH QUOTE BANNER */
+  .banner-quote {
+    background: #c00;
+    color: #fff;
+    border-top: 3px solid #f2a900;
+    border-bottom: 3px solid #f2a900;
+    margin: 40px 0;
+    padding: 30px 15px;
+    text-align: center;
+  }
+  .banner-quote blockquote {
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    font-size: clamp(32px, 6vw, 60px);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    line-height: 1;
+    text-shadow: 2px 2px 0px #000;
+  }
+
+  /* FOOTER */
+  footer {
+    border-top: 2px solid #332d23;
+    padding-top: 20px;
+    text-align: center;
+    font-family: -apple-system, sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #666;
+  }
+  footer strong { color: #f2a900; }
+
+  /* RESPONSIVE LAYOUT */
+  @media(max-width: 800px) {
+    .magazine-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="../../index.html">IN RUINS</a>
+    <div class="navlinks">
+      <a href="../../travel.html">Travel</a>
+      <a href="../../history.html">History</a>
+      <a href="../../photographs.html">Photos</a>
+      <a href="../../fieldnotes.html">Field Notes</a>
+      <a href="../../backporch.html">Back Porch</a>
+      <a href="../../ride.html" style="color:#f2a900;">The Ride</a>
+    </div>
+  </nav>
+</header>
+
+<div class="wrap">
+
+  <!-- VINTAGE BIKER MAGAZINE MASTHEAD -->
+  <section class="hero-mast">
+    <div class="badge">Official Rider Log</div>
+    <div class="kicker">The Ride — Vol. 1</div>
+    <h1>PROTECT YOUR EYES.</h1>
+    <p>“Watch for wet leaves &amp; keep your knuckles in the wind.”</p>
+  </section>
+
+  <!-- MAGAZINE SPREAD GRID -->
+  <div class="magazine-grid">
+    
+    <!-- MAIN STORY / CONTENT COLUMN -->
+    <main class="main-feature">
+      <div class="article-header">
+        <h2>Look What I Can Do: Build Stories</h2>
+        <div class="subtext">Editorial Content &amp; Freedom on Two Wheels</div>
+      </div>
+
+      <div class="body-copy">
+        <p>The road doesn't care what you drive, as long as you're in the saddle with the open sky ahead. On the back half of this site, we ditch the newsprint and dive into straight grease, long miles, and unfiltered iron counter-culture.</p>
+        
+        <p>Take it easy on the throttle when the asphalt turns slick. On a scooter, remember the left lever isn't a clutch—slow in the snow, easy through the curves, and always keep your eye on the line ahead.</p>
+        
+        <p>Whether it's on-road asphalt or off-road gravel tracks, every mile builds another page in the logbook.</p>
+      </div>
+    </main>
+
+    <!-- SIDEBAR / SPECS / CONTACT BOX -->
+    <aside class="sidebar-box">
+      <h3>Trail Notes</h3>
+      
+      <div class="spec-item">
+        <strong>Look Ahead</strong>
+        <span>Take it easy &amp; watch the horizon.</span>
+      </div>
+
+      <div class="spec-item">
+        <strong>Content &amp; Writing</strong>
+        <span>Slow ride, clean lines, long miles.</span>
+      </div>
+
+      <div class="spec-item">
+        <strong>Braking Tip</strong>
+        <span>On a scooter, the left hand controls rear brakes, not a clutch!</span>
+      </div>
+
+      <div class="spec-item">
+        <strong>Road Conditions</strong>
+        <span>Asphalt, gravel, mud, or snow.</span>
+      </div>
+
+      <a class="btn-biker" href="mailto:jhinterfeller@gmail.com">Dispatch Mail →</a>
+    </aside>
+
+  </div>
+
+</div>
+
+<!-- FULL-WIDTH EASYRIDERS CALLOUT QUOTE -->
+<section class="banner-quote">
+  <div class="wrap">
+    <blockquote>“LOOK MOM, NO HANDS!”</blockquote>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><strong>THE RIDE</strong> — IN RUINS COUNTER-CULTURE LOG — INDEPENDENCE</p>
+  </div>
+</footer>
+
+</body>
+</html>
